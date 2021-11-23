@@ -11,7 +11,7 @@
   "engines": {
     "node": "16.13.0",
     "npm": "8.1.0"
-  }, 
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development",
@@ -35,11 +35,14 @@
     "babel-loader": "^8.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.2.0",
+    "react-spring": "^9.0.0-rc.3",
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.0",
+    "styled-components": "^5.3.3",
     "webpack": "^5.64.2",
     "webpack-cli": "^4.9.1"
   }

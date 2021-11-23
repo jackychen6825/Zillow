@@ -31,6 +31,16 @@ class SessionForm extends React.Component{
         );
     }
 
+    //used for guest (demo) login 
+    guestLogin(e){
+        e.preventDefault();
+        const guest = {
+            email: "guest@gmail.com",
+            password: "password"
+        };
+        
+    }
+
     render(){
         const { formType, link } = this.props;
         return(

@@ -8,7 +8,6 @@ import { fetchProperties } from "./actions/property_actions";
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
 
-    //users can now remain logged in 
     let store;
     if (window.currentUser) {
         const preloadedState = {
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signup = signup; 
     window.fetchProperties = fetchProperties; 
     
-
     ReactDOM.render(<Root store={store} />, root); 
 })
 

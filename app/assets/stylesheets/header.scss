@@ -1,0 +1,41 @@
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: solid 1px lightgray;  
+}
+
+.header-left, .header-right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+
+.header-container a {
+    font-family: sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    margin: 15px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header-right {
+    margin-right: 10%;
+}
+
+.header-left {
+    margin-left: 10%;
+}
+
+.logo {
+    width: 10vw;
+    height: 40px;
+}
+

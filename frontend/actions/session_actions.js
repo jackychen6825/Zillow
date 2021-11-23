@@ -38,6 +38,6 @@ export const signup = user => dispatch => (
     ApiUtil.signup(user)
         .then(
             currentUser => (dispatch(receiveCurrentUser(currentUser))),
-            errors  => dispatch(receiveErrors(errors.responseJSON))
+            errors  => (dispatch(receiveErrors(errors.responseJSON)))
         )
 )

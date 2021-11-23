@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_193152) do
+ActiveRecord::Schema.define(version: 2021_11_23_163529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "properties", force: :cascade do |t|
+    t.string "address", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.integer "zipcode", null: false
+    t.integer "bedrooms", null: false
+    t.integer "bathrooms", null: false
+    t.integer "sfqt", null: false
+    t.integer "price", null: false
+    t.boolean "for_sale", null: false
+    t.integer "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bathrooms"], name: "index_properties_on_bathrooms"
+    t.index ["bedrooms"], name: "index_properties_on_bedrooms"
+    t.index ["city"], name: "index_properties_on_city"
+    t.index ["latitude", "longitude"], name: "index_properties_on_latitude_and_longitude", unique: true
+    t.index ["longitude"], name: "index_properties_on_longitude"
+    t.index ["owner_id"], name: "index_properties_on_owner_id"
+    t.index ["price"], name: "index_properties_on_price"
+    t.index ["zipcode"], name: "index_properties_on_zipcode"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  #access within views 
+  #access within views json jbuilder 
   helper_method :current_user, :logged_in?
 
   private

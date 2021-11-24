@@ -14,11 +14,11 @@
 }
 
 .header-container a {
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
-    text-decoration: none;
+    text-decoration: none; //dont want the underline 
     color: black;
-    margin: 15px;
+    margin: 12px;
 }
 
 .logo-container {
@@ -35,7 +35,10 @@
 }
 
 .logo {
-    width: 10vw;
-    height: 40px;
+    width: 12vw;
+    height: 45px;
 }
 
+.header-container a:hover {
+    color: blue;
+}

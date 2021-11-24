@@ -20,7 +20,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                 <Link to="/">Manage Rentals</Link>
                 <Link to="/">Advertise</Link>
                 <button onClick={() => openModal('login')}>Log In</button>
-                &nbsp;or&nbsp;
+                &nbsp;
                 <button onClick={() => openModal('signup')}>Sign Up</button>
             </div>
         </div>

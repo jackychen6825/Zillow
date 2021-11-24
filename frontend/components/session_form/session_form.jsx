@@ -45,6 +45,11 @@ class SessionForm extends React.Component{
         }).then(this.props.closeModal)
     }
 
+    //clear errors between forms (login/signup)
+    componentWillUnmount(){
+        this.props.clearErrors();
+    }
+
 
     render(){
         return (

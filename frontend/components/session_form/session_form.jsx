@@ -9,11 +9,12 @@ class SessionForm extends React.Component{
             password: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.guestLogin = this.guestLogin.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault(); 
-        this.props.processForm(this.state); //EG this.state = { email: "jc6825@nyu.edu", password: "password" }
+        this.props.processForm(this.state).then(this.props.closeModal);
     }
 
     update(field){
@@ -32,6 +33,16 @@ class SessionForm extends React.Component{
                 ))}
             </ul>
         );
+    }
+
+    // for demo login so the user doesnt have to manually sign up
+    guestLogin(e){
+        e.preventDefault();
+
+        this.props.processForm({
+            email: "guest@gmail.com",
+            password: "password"
+        }).then(this.props.closeModal)
     }
 
 
@@ -55,6 +66,8 @@ class SessionForm extends React.Component{
                         </label>
                         <br/>
                         <input type="submit" className='session-submit' value={this.props.formType} />
+                        <br/>
+                        <input type="submit" className='session-submit' value='Guest' onClick={this.guestLogin}/>
                     </div>
 
                 </form>

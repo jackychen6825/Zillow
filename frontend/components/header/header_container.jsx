@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions";
-import Greeting from "./greeting";
+import Header from "./header";
 
 const mapSTP = ({ session, entities }) => ({
     currentUser: entities.users[session.id]
@@ -12,5 +12,5 @@ const mapDTP = dispatch => ({
     openModal: modal => dispatch(openModal(modal))
 });
 
-export default connect(mapSTP, mapDTP)(Greeting); 
+export default connect(mapSTP, mapDTP)(Header); 
 

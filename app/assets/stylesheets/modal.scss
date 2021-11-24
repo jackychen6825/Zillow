@@ -1,7 +1,7 @@
 .session-form-container {
    display: flex;
    justify-content: center;
-   padding: 30px;
+   width: 320px;
   
  }
 
@@ -9,18 +9,39 @@
    display: flex;
    justify-content: center;
    flex-direction: column;
+   
+ }
 
+ .session-form-box a:hover {
+    color: lightskyblue;
+    border-bottom: 2px solid lightskyblue;
+ }
+
+ .session-intro{
+   font-size: 20px;
+   font-family: 'Times New Roman', Times, serif;
+   margin-bottom: 5px;
  }
 
  .session-input {
-   margin-left: 20px;
+  height: 25px;
+  margin-top: 5px;
+  background: lightslategray;
+  background-color: rgba(245, 244, 244, 0.948);
+  border: 1px solid lightgray;
+  border-radius: 5px;
  }
 
  .session-form-box {
-   outline: 1px solid black;
+   border: 1px solid lightgray;
+   border-radius: 10px;
    padding: 20px;
    background: white;
    position: relative;
+   width: 100%;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 12px;
+  
  }
 
  .filter {
@@ -37,7 +58,11 @@
  }
 
  .session-submit {
-   text-transform: capitalize;
+  height: 30px;
+  background-color: dodgerblue;
+  border: 1px dodgerblue solid;
+  border-radius: 5px;
+  font-family: system-ui;
  }
  
 .modal-background {
@@ -46,7 +71,7 @@
    bottom: 0;
    right: 0;
    left: 0;
-   background: rgba(0, 0, 0, 0.7);
+   background: rgba(0, 0, 0, 0.5);
    z-index: 10;
  }
 
@@ -57,6 +82,10 @@
    transform: translate(-50%, -50%);
    padding-top: 50px;
    padding-bottom: 50px;
+   width: 400px;
+   height: 500px; 
+   display: flex;
+   justify-content: center;
  }
 
  .close-x {

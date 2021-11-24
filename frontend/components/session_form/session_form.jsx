@@ -50,20 +50,23 @@ class SessionForm extends React.Component{
         return (
             <div className='session-form-container'>
                 <form onSubmit={this.handleSubmit} className='session-form-box'>
-                    Welcome to Millow!
-                    <br/>
-                    Please {this.props.formType} or {this.props.otherForm}
+                    
+                    <p className='session-intro'>Welcome to Millow</p>
+
+                    {this.props.formType} {this.props.otherForm}
                     <div onClick={this.props.closeModal} className='close-x'>X</div>
                     {this.renderErrors()}
                     <div className='session-form'>
                         <br/>
-                        <label>Email
-                            <input type="text" value={this.state.email} onChange={this.update('email')} className='session-input' placeholder='Enter an email' />
-                        </label>
+                        Email
                         <br/>
-                        <label>Password
-                            <input type="password" value={this.state.password} onChange={this.update('password')} className='session-input' placeholder='Enter a password' />
-                        </label>
+                    <input type="text" value={this.state.email} onChange={this.update('email')} className='session-input' placeholder='Enter email' />
+                     
+                        <br/>
+                        Password
+                        <br/>
+                    <input type="password" value={this.state.password} onChange={this.update('password')} className='session-input' placeholder='Enter password' />
+                       
                         <br/>
                         <input type="submit" className='session-submit' value={this.props.formType} />
                         <br/>

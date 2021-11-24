@@ -5,24 +5,16 @@ import SignupFormContainer from "../components/session_form/signup_form_containe
 import { Route, Switch, Link } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
 import Header from "./header/header";
-import Modal from "./modal/modal";
+
+import Modal from './modal/modal';
+
 
 const App = () => (
     <div>
+        <Modal />
         <header>
-            <Header />
+            <GreetingContainer /> 
         </header>
-
-        <div className="App">
-            <h1>Click on the button to open the modal</h1>
-            <button className="openModal">Open</button>
-            <Modal />
-        </div>
-
-        <Switch> 
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        </Switch>
     </div>
 );
 

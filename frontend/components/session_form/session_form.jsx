@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router";
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -21,44 +22,41 @@ class SessionForm extends React.Component{
         })
     }
 
-    renderErrors(){
-        return(
+    renderErrors() {
+        return (
             <ul>
-                {this.props.errors.map(
-                    (error, i) => <li key={i}>{error}</li>
-                )}
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
             </ul>
         );
     }
 
-    //used for guest (demo) login 
-    guestLogin(e){
-        e.preventDefault();
-        const guest = {
-            email: "guest@gmail.com",
-            password: "password"
-        };
-        
-    }
 
     render(){
-        const { formType, link } = this.props;
-        return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    "Welcome to Willow" 
+        return (
+            <div className='login-form-container'>
+                <form onSubmit={this.handleSubmit} className='login-form-box'>
+                    Welcome to Millow!
                     <br/>
-                    Please {formType} or {link}
-                    <br/>
+                    Please {this.props.formType} or {this.props.otherForm}
+                    <div onClick={this.props.closeModal} className='close-x'>X</div>
                     {this.renderErrors()}
-                    <label>Email:
-                        <input type="text" value={this.state.email} onChange={this.update('email')}/>
-                    </label>
-                    <label>Password:
-                        <input type="password" value={this.state.password} onChange={this.update('password')}/>
-                    </label>
-                    <br/>
-                    <input type="submit" value={formType} />
+                    <div className='login-form'>
+                        <br/>
+                        <label>Email
+                            <input type="text" value={this.state.email} onChange={this.update('email')} className='login-input' placeholder='Enter an email' />
+                        </label>
+                        <br/>
+                        <label>Password
+                            <input type="password" value={this.state.password} onChange={this.update('password')} className='login-input' placeholder='Enter a password' />
+                        </label>
+                        <br/>
+                        <input type="submit" className='session-submit' value={this.props.formType} />
+                    </div>
+
                 </form>
             </div>
         )
@@ -66,4 +64,4 @@ class SessionForm extends React.Component{
 
 }
 
-export default SessionForm; 
+export default withRouter(SessionForm); 

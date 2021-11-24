@@ -1,17 +1,22 @@
 import { connect } from "react-redux";
-import { login } from "../../actions/session_actions"; 
-import { Link } from "react-router-dom";
-import SessionForm from "./session_form";
 import React from "react";
+import { login } from "../../actions/session_actions"; 
+import { openModal, closeModal } from "../../actions/modal_actions";
+import SessionForm from "./session_form";
 
 const mapSTP = ({ errors }) => ({
     errors: errors.session,
-    formType: 'log in',
-    link: <Link to="/signup">sign up</Link>
+    formType: 'login',
 });
 
 const mapDTP = (dispatch) => ({
-    processForm: user => dispatch(login(user))
+    processForm: user => dispatch(login(user)),
+    otherForm: (
+        <button onClick={() => dispatch(openModal('signup')) }>
+            Signup
+        </button>
+    ),
+    closeModal: () => dispatch(closeModal())
 }); 
 
 export default connect(mapSTP, mapDTP)(SessionForm); 

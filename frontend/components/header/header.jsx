@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { openModal } from "../../actions/modal_actions";
 
 const Header = () => {
     return(
@@ -17,8 +18,8 @@ const Header = () => {
             <div className="header-right">
                 <Link to="/">Manage Rentals</Link>
                 <Link to="/">Advertise</Link>
-                <Link to="/">Help</Link>
-                <Link to="/signup">Sign In</Link>
+                <button onClick={() => openModal('login')}>Log In</button>
+                <button onClick={() => openModal('signup')}>Sign Up</button>
             </div>
         </div>
     )

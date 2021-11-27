@@ -25,4 +25,18 @@ class Property < ApplicationRecord
     #validate uniqueness of latitude / longitude combination 
     validates_uniqueness_of :latitude, scope: :longitude
 
+
+    #need to limit the map to showing markers within the boundaries of the map
+    #btw map is a square oki which happens to be a rectangle but a rectangle isnt a square 
+    #remember 5th grade material, it is important for life in general ok ok ok 
+
+    def self.in_bounds(bounds)
+        self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])
+    end
+
+
+
 end

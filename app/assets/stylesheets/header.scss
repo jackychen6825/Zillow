@@ -1,7 +1,7 @@
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     height: 50px;
     border-bottom: solid 1px lightgray;  
@@ -16,9 +16,9 @@
 .header-container a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
-    text-decoration: none; //dont want the underline 
+    text-decoration: none; 
     color: black;
-    margin: 12px;
+    margin: 8px;
 }
 
 .logo-container {

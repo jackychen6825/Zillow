@@ -1,7 +1,11 @@
 class Api::PropertiesController < ApplicationController
 
     def index
-        @properties = Property.in_bounds(params[:bounds]) #bounds will be avaulable in the params hash 
+        @properties = Property.in_bounds(params[:bounds])
+        # bounds = params[:bounds] 
+        # properties = bounds ? Property.all : Property.in_bounds(bounds) 
+        # @properties = properties 
+        # @properties
         render :index 
     end
 

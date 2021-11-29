@@ -7,8 +7,10 @@ const receiveProperties = properties => ({
     properties: properties
 });
 
-export const fetchProperties = () => dispatch => (
-    APIUtil.fetchProperties()
+
+export const fetchProperties = (bounds) => (dispatch) => (
+    APIUtil.fetchProperties(bounds) //updated api function to include bounds  
         .then(properties => dispatch(receiveProperties(properties)))
 );
+
 

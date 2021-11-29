@@ -1,13 +1,10 @@
-
-//how am i supposed to use the filters?
-export const fetchProperties = () => {
+export const fetchProperties = bounds => {
     return $.ajax({
         method: "GET",
         url: "/api/properties",
-        // bounds: bounds, //is this the right way to include it?
+        data: bounds, 
         error: (err) => console.log(err)
     })
 }
-
 
 

@@ -2,24 +2,20 @@
 export default class MarkerManager {
     constructor(map){
         this.map = map; 
-        //will be essential ok
         this.markers = {};  
     }
 
     updateMarkers(properties){
-        
-        //initialize property object 
+        //converting properties arr into property object for constant look up time: 
         let propertyObj = {}; 
+        properties.forEach(property => propertyObj[property.id] = property);
 
-        //populate the propertyObj with the passed in properties arr
-        properties.forEach(prop => propertyObj[prop.id] = prop);
-
-        //remember that properties prop is an arr of property objects 
+        //for each property, if the property id isnt in this.markers make a new marker for it 
         properties
-            .filter(property => !this.markers[property.id]) //give me a filtered arr where the properties are only those that dont have markers 
-            .forEach(property => this.createMarkerFromProperty(property)) //make the marker for the filtered properties 
+            .filter(property => !this.markers[property.id]) 
+            .forEach(property => this.createMarkerFromProperty(property))  
 
-        //this.markers = { 1: marker, 2: marker }
+        //removing markers for properties not in our property obj
         Object.keys(this.markers) //[1,2,3,...]
             .filter(propertyId => !propertyObj[propertyId])
             .forEach(propertyId => this.removeMarker(this.markers[propertyId])) //takes in the markers object as the argument need to make the helper method
@@ -28,18 +24,15 @@ export default class MarkerManager {
 
     //helper method:
     createMarkerFromProperty(property){
-        const position = new google.maps.LatLng(property.lat, property.lng); //make a new instance of google maps longitude and latitude class
+        const position = new google.maps.LatLng(property.latitude, property.longitude); //make a new instance of google maps longitude and latitude class
+        
         const marker = new google.maps.Marker({
             position: position,
-            map: this.map, //passed in as a argument within the constructor
+            map: this.map, 
             propertyId: property.id 
-
         })
 
-        //adding it finally to the marker variable 
-        this.markers[property.id] = marker; 
-        //same as:
-        // this.markers[marker.propertyId] = marker;
+        this.markers[marker.propertyId] = marker;
     }
 
     removeMarker(marker){
@@ -49,7 +42,5 @@ export default class MarkerManager {
         delete this.markers[marker.propertyId];  
 
     }
-
-    //putting this shit on backburner...
 }
 

@@ -7,8 +7,7 @@ class PropertyIndex extends React.Component {
     }
 
     componentDidMount(){
-        //passed down from map dispatch to props 
-        this.props.fetchProperties();
+        
     }
 
     render(){

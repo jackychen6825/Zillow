@@ -1,12 +1,18 @@
-import { UPDATE_BOUNDS } from '../actions/filter_actions';
+import { UPDATE_FILTER } from '../actions/filter_actions';
 
-export default function filterReducer(state = {}, action) {
+const defaultState = { bounds: {} }; 
+
+export default function filterReducer(state = defaultState, action) {
     Object.freeze(state);
+    let nextState = Object.assign({}, state); //copying the state to mutate 
+
     switch (action.type) {
-        case UPDATE_BOUNDS:
-            return action.bounds; 
+        case UPDATE_FILTER:
+            nextState[action.filter] = action.value
+            return nextState;  
         default:
             return state;
     }
 }
+
 

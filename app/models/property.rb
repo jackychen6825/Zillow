@@ -21,22 +21,12 @@
 class Property < ApplicationRecord
     validates :address, :latitude, :longitude, :city, :state, :zipcode, :bedrooms, :bathrooms, :sfqt, :price, :for_sale, :owner_id, presence: true
     validates_inclusion_of :for_sale, in: [true, false]
-    
-    #validate uniqueness of latitude / longitude combination 
     validates_uniqueness_of :latitude, scope: :longitude
 
-
-    #need to limit the map to showing markers within the boundaries of the map
-    #btw map is a square oki which happens to be a rectangle but a rectangle isnt a square 
-    #remember 5th grade material, it is important for life in general ok ok ok 
-
-    def self.in_bounds(bounds)
-        self.where("lat < ?", bounds[:northEast][:lat])
-        .where("lat > ?", bounds[:southWest][:lat])
-        .where("lng > ?", bounds[:southWest][:lng])
-        .where("lng < ?", bounds[:northEast][:lng])
+    def self.in_bounds(bounds) #params[:bounds] = bounds but params[:bounds] = nil 
+        self.where("latitude < ?", bounds[:northEast][:lat])
+        .where("latitude > ?", bounds[:southWest][:lat])
+        .where("longitude > ?", bounds[:southWest][:lng])
+        .where("longitude < ?", bounds[:northEast][:lng])
     end
-
-
-
 end

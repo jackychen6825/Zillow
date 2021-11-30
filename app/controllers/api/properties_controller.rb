@@ -11,6 +11,10 @@ class Api::PropertiesController < ApplicationController
         render :index 
     end
 
+    def show 
+        @
+    end 
+
     def create
         @property = Property.new(property_params)
         @property.owner_id = current_user.id 

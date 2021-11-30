@@ -1,8 +1,8 @@
-export const fetchProperties = bounds => {
+export const fetchProperties = data => {
     return $.ajax({
         method: "GET",
         url: "/api/properties",
-        data: bounds, 
+        data: data, 
         error: (err) => console.log(err)
     })
 }

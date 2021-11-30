@@ -6,10 +6,6 @@ class PropertyIndex extends React.Component {
         super(props)
     }
 
-    componentDidMount(){
-        
-    }
-
     render(){
         const { properties } = this.props;
         return (

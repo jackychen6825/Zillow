@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: {format: :json} do
-    resources :properties, only: [:create, :index] 
+    resources :properties, only: [:create, :index, :show] 
   end
   
   root to: "static_pages#root"

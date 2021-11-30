@@ -18,9 +18,14 @@ export const fetchProperties = (filters) => (dispatch) => (
         .then(properties => dispatch(receiveProperties(properties)))
 );
 
+export const fetchProperty = id => dispatch => (
+    APIUtil.fetchProperty(id)
+        .then(property => dispatch(receiveProperty(property)))
+); 
+
 export const createProperty = property => dispatch => (
     APIUtil.createProperty(property)
         .then(property => dispatch(receiveProperty(property)))
-)
+);
 
 

@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { login, logout, signup } from './actions/session_actions';
 import { fetchProperties } from './util/property_api_util';
+import { fetchProperty } from './util/property_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -22,12 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore();
     }
 
-    //testing purposes 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.login = login;
-    window.signup = signup; 
-    window.fetchProperties = fetchProperties; 
+    window.fetchProperty = fetchProperty;
     
     ReactDOM.render(<Root store={store} />, root); 
 })

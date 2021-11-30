@@ -5,17 +5,17 @@ const handleChange = (filter, updateFilter) => (e) => (
 ); 
 
 const FilterForm = ({ minPrice, maxPrice, updateFilter }) => (
-    <div>
+    <div className='filter-container'>
         <label className='home-input-field'>Minimum Price</label><br />
         <input
             onChange={handleChange('minPrice', updateFilter)}
-            className='session-input'
+            className='filter-input'
             type="number"
             value={minPrice} /><br />
         <label className='home-input-field'>Maximum Price</label><br />
         <input
             onChange={handleChange('maxPrice', updateFilter)}
-            className='session-input'
+            className='filter-input'
             type="number"
             value={maxPrice} />
     </div>

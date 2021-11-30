@@ -12,7 +12,8 @@ class Api::PropertiesController < ApplicationController
     end
 
     def show 
-        @
+        @property = Property.find(params[:id])
+        render :show 
     end 
 
     def create

@@ -9,8 +9,10 @@ const Search = ({ properties, updateFilter, minPrice, maxPrice }) => (
     
     <div>
         <FilterForm minPrice={minPrice} maxPrice={maxPrice} updateFilter={updateFilter} />
-        <Map updateFilter={updateFilter} properties={properties} />
-        <PropertyIndex properties={properties} />
+        <div className='index-container'>
+            <Map updateFilter={updateFilter} properties={properties} />
+            <PropertyIndex properties={properties} />
+        </div>
     </div>
 )
 export default Search; 

@@ -9,11 +9,11 @@ class PropertyIndex extends React.Component {
     render(){
         const { properties } = this.props;
         return (
-            <ul>
+            <div className='property-index-container'>
                 {properties.map(
                     property => <PropertyIndexItem key={property.id} property={property} />
-                )}
-            </ul>
+                )} 
+            </div>
         )
     }
 }

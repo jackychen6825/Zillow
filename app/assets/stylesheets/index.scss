@@ -1,0 +1,61 @@
+.index-container {
+    display: flex;
+    width: 100%;
+}
+
+.property-index {
+    width: 50%;
+}
+
+.property-index-container {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    padding-left: 8px;
+}
+
+.property-item {
+    display: flex;
+    border: 1px solid rgb(233, 233, 233);
+    border-bottom: 3px solid blue;
+    flex-wrap: wrap;
+    width: 270px;
+    height: 200px;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5px;
+
+}
+
+.example-image {
+    width: 100%;
+    height: 70%;
+}
+
+.property-text-box {
+    padding-left: 5px;
+}
+
+.price {
+    margin: 2px;
+}
+
+.details {
+    margin: 2px;
+}
+
+.filter-container {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    padding: 5px;
+
+}
+
+.filter-input {
+    height: 25px;
+    background: lightslategray;
+    background-color: rgba(245, 244, 244, 0.948);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 0px 6px;
+}

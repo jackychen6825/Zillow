@@ -7,6 +7,13 @@ export const fetchProperties = data => {
     })
 }
 
+export const fetchProperty = id => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/properties/${id}`
+    })
+)
+
 export const createProperty = property => (
     $.ajax({
         method: 'POST',

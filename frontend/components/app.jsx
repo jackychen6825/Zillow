@@ -17,10 +17,10 @@ const App = () => (
         <Switch>
             <Route exact path='/' component={SearchContainer} />
             <Route exact path='/properties/new' component={PropertyFormContainer} />
-            <Route exact path='/properties/:propertyId' component={PropertyShowContainer} />
         </Switch>
-
+            
     </div>
-);
-
+            );
+            
+            // <Route exact path='/properties/:propertyId' component={PropertyShowContainer} />
 export default App; 

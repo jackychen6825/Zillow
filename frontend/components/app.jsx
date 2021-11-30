@@ -5,7 +5,7 @@ import SearchContainer from './search/search_container';
 import { Route, Switch, Link } from "react-router-dom";
 import { ProtectedRoute } from "../util/route_util";
 import PropertyFormContainer from '../components/properties/property_form_container';
-import PropertyShowContainer from '../components/properties/properties_show_container';
+import PropertyShowContainer from './properties/property_show_container';
 
 const App = () => (
     <div>

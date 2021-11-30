@@ -5,7 +5,8 @@ import PropertyIndexContainer from '../components/properties/properties_index_co
 import SearchContainer from './search/search_container';
 
 import { Route, Switch, Link } from "react-router-dom";
-import { AuthRoute } from "../util/route_util";
+import { ProtectedRoute } from "../util/route_util";
+import PropertyFormContainer from '../components/properties/property_form_container';
 
 const App = () => (
     <div>
@@ -16,6 +17,7 @@ const App = () => (
 
         <Switch>
             <Route exact path='/' component={SearchContainer} />
+            <Route exact path='/properties/new' component={PropertyFormContainer} />
         </Switch>
 
     </div>

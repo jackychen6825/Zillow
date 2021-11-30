@@ -19,7 +19,7 @@
 #  updated_at :datetime         not null
 #
 class Property < ApplicationRecord
-    validates :address, :latitude, :longitude, :city, :state, :zipcode, :bedrooms, :bathrooms, :sfqt, :price, :for_sale, :owner_id, presence: true
+    validates :address, :latitude, :longitude, :city, :state, :zipcode, :bedrooms, :bathrooms, :sqft, :price, :for_sale, :owner_id, presence: true
     validates_inclusion_of :for_sale, in: [true, false]
     validates_uniqueness_of :latitude, scope: :longitude
 

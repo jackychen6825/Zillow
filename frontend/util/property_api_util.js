@@ -7,4 +7,14 @@ export const fetchProperties = bounds => {
     })
 }
 
+export const createProperty = property => (
+    $.ajax({
+        method: 'POST',
+        url: '/api/properties',
+        data: { property }
+    })
+)
+
+
+
 

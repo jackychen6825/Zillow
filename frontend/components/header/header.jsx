@@ -10,7 +10,7 @@ const Header = ({ currentUser, logout, openModal }) => {
             <div className="header-left">
                 <Link to="/">Buy</Link>
                 <Link to="/">Rent</Link>
-                <Link to="/">Sell</Link>
+                <Link to="/properties/new">Sell</Link>
                 <Link to="/">Home Loans</Link>
                 <Link to="/">Agent Finder</Link>
             </div>
@@ -32,7 +32,7 @@ const Header = ({ currentUser, logout, openModal }) => {
             <div className="header-left">
                 <Link to="/">Buy</Link>
                 <Link to="/">Rent</Link>
-                <Link to="/">Sell</Link>
+                <Link to="/properties/new">Sell</Link>
                 <Link to="/">Home Loans</Link>
                 <Link to="/">Agent Finder</Link>
             </div>

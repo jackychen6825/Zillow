@@ -2,8 +2,10 @@ import { connect } from "react-redux";
 import Search from "./search";
 import { updateFilter } from "../../actions/filter_actions";
 
-const mapSTP = ({ entities }) => ({
-    properties: Object.values(entities.properties)
+const mapSTP = ({ entities, ui }) => ({
+    properties: Object.values(entities.properties),
+    minPrice: ui.filters.minPrice,
+    maxPrice: ui.filters.maxPrice
 })
 
 const mapDTP = dispatch => ({

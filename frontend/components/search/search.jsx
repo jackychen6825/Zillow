@@ -1,6 +1,6 @@
 import React from "react";
 import Map from '../map/map';
-import PropertyIndex from "../properties/properties_index"
+import PropertyIndexContainer from "../properties/properties_index_container";
 import FilterForm from "../filters/filter_form";
 
 const Search = ({ properties, updateFilter, minPrice, maxPrice }) => (
@@ -11,7 +11,7 @@ const Search = ({ properties, updateFilter, minPrice, maxPrice }) => (
         <FilterForm minPrice={minPrice} maxPrice={maxPrice} updateFilter={updateFilter} />
         <div className='index-container'>
             <Map updateFilter={updateFilter} properties={properties} />
-            <PropertyIndex properties={properties} />
+            <PropertyIndexContainer />
         </div>
     </div>
 )

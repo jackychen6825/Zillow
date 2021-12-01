@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import PropertyShowContainer from '../properties/property_show_container';
 
 function Modal( {modal, closeModal} ) { //object destructuring from the mapSTP 
     if (!modal) { //modal = state.ui.modal if it's null, return nothing?
@@ -17,13 +18,16 @@ function Modal( {modal, closeModal} ) { //object destructuring from the mapSTP
         case 'signup':
             component = <SignupFormContainer />
             break; 
+        case 'show':
+            component = <PropertyShowContainer />
+            break;
         default:
            return null;
     }
 
     return (
         <div className='modal-background' onClick={closeModal}>
-            <div className='modal-child' onClick={e => e.stopPropagation()}> 
+            <div className={`modal-child-${modal}`} onClick={e => e.stopPropagation()}> 
                 { component }
             </div>
         </div>
@@ -31,7 +35,7 @@ function Modal( {modal, closeModal} ) { //object destructuring from the mapSTP
 }
 
 const mapSTP = state => ({
-    modal: state.ui.modal //access to modal slice of state
+    modal: state.ui.modal.modalType
 });
 
 const mapDTP = dispatch => ({

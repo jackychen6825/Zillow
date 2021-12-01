@@ -75,7 +75,7 @@
    z-index: 10;
  }
 
- .modal-child {
+ .modal-child-signup {
    position: absolute;
    top: 50%;
    left: 50%;
@@ -88,9 +88,72 @@
    justify-content: center;
  }
 
+ .modal-child-login {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding-top: 50px;
+   padding-bottom: 50px;
+   width: 400px;
+   height: 500px; 
+   display: flex;
+   justify-content: center;
+ }
+
+.modal-child-show {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
  .close-x {
    position: absolute;
    top: 5px;
    right: 5px;
    cursor: pointer;
  }
+
+//  show modal 
+
+ .property-show-container {
+    background-color: white;
+    display: flex;
+    width: 100%;
+}
+
+.show-images {
+  background-color: white;
+  border-right: 1px solid lightgrey;
+  width: 60%;
+}
+
+.show-details-container {
+  background-color: white;
+  width: 40%;
+}
+
+.show-header {
+  height: 10%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.show-details {
+  height: 20%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.show-map {
+  height: 35%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.description {
+  height: 35%;
+  border-bottom: 1px solid lightgrey;
+}

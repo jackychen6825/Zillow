@@ -7,12 +7,18 @@ class PropertyIndex extends React.Component {
     }
 
     render(){
-        const { properties } = this.props;
+        const { properties, openModal } = this.props
         return (
             <div className='property-index-container'>
-                {properties.map(
-                    property => <PropertyIndexItem key={property.id} property={property} />
-                )} 
+                {
+                    properties.map(property => (
+                        <PropertyIndexItem 
+                            key={property.id} 
+                            property={property} 
+                            openModal={openModal}
+                        />
+                    ))
+                } 
             </div>
         )
     }

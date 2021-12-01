@@ -8,7 +8,7 @@ const mapSTP = ({ entities }) => ({
 
 const mapDTP = dispatch => {
     return {
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal, property) => dispatch(openModal(modal, property))
 }}
 
 export default connect(mapSTP, mapDTP)(PropertyIndex); 

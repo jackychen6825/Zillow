@@ -14,13 +14,10 @@ class Map extends React.Component {
     componentDidMount() {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map)
-
-        //when the component mounts set the bounds 
         this.registerListeners(); 
         this.MarkerManager.updateMarkers(this.props.properties)
     }
 
-    //dispatch updateBounds when map moves
     registerListeners() {
         google.maps.event.addListener(this.map, 'idle', () => {
             const { north, south, east, west } = this.map.getBounds().toJSON();
@@ -28,19 +25,21 @@ class Map extends React.Component {
                 northEast: { lat: north, lng: east },
                 southWest: { lat: south, lng: west }
             };
-            this.props.updateFilter('bounds', bounds); //filter, value 
+            this.props.updateFilter('bounds', bounds); 
         });
-
-        //additional event listener 
-        
     }
 
     componentDidUpdate(){
         this.MarkerManager.updateMarkers(this.props.properties)
     }
 
+    //marker click opens show modal 
+    handleMarkerClick(){
+        
+    }
+
     render(){
-        return(
+        return (
             <div id='map-container' ref={map => this.mapNode = map}></div>
         )
     } 

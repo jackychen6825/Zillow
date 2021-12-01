@@ -1,8 +1,9 @@
 
 export default class MarkerManager {
-    constructor(map){
+    constructor(map, handleClick){
         this.map = map; 
-        this.markers = {};  
+        this.markers = {}; 
+        this.handleClick = handleClick; 
     }
 
     updateMarkers(properties){
@@ -22,7 +23,6 @@ export default class MarkerManager {
 
     }
 
-    //helper method:
     createMarkerFromProperty(property){
         const position = new google.maps.LatLng(property.latitude, property.longitude); //make a new instance of google maps longitude and latitude class
         
@@ -30,9 +30,11 @@ export default class MarkerManager {
             position: position,
             map: this.map, 
             propertyId: property.id 
-        })
+        });
 
+        marker.addListener('click', () => this.handleClick(property)); //open modal when user clicks on marker 
         this.markers[marker.propertyId] = marker;
+
     }
 
     removeMarker(marker){

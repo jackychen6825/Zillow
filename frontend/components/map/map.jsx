@@ -13,7 +13,7 @@ class Map extends React.Component {
 
     componentDidMount() {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        this.MarkerManager = new MarkerManager(this.map)
+        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
         this.registerListeners(); 
         this.MarkerManager.updateMarkers(this.props.properties)
     }
@@ -34,8 +34,8 @@ class Map extends React.Component {
     }
 
     //marker click opens show modal 
-    handleMarkerClick(){
-        
+    handleMarkerClick(property){
+        this.props.openModal('show', property)
     }
 
     render(){

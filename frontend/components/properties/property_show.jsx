@@ -1,4 +1,5 @@
 import React from "react";
+import MiniMap from "../map/mini_map";
 
 class PropertyShow extends React.Component {
     constructor(props){
@@ -7,6 +8,7 @@ class PropertyShow extends React.Component {
     
     render(){
         const { property } = this.props;
+
         return (
             <div className='property-show-container'>
                <div className='show-images'>
@@ -26,7 +28,7 @@ class PropertyShow extends React.Component {
                         </div>
                     </div>
                     <div className='show-map'>
-                        
+                        <MiniMap property={property} />
                     </div>
                     <div className='show-description'></div>
                </div> 

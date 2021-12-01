@@ -14,7 +14,8 @@ class PropertyForm extends React.Component {
             bathrooms: '',
             sqft: '',
             price: '',
-            for_sale: true
+            for_sale: true,
+            description: ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
@@ -25,7 +26,7 @@ class PropertyForm extends React.Component {
 
     update(field) {
         return e => {
-            if (field === 'address' || field === 'city' || field === 'state'){
+            if (field === 'address' || field === 'city' || field === 'state' || field === 'description'){
                 this.setState({
                     [field]: e.target.value
                 })
@@ -77,25 +78,25 @@ class PropertyForm extends React.Component {
                         type="text" 
                         value={this.state.address} 
                         onChange={this.update('address')} 
-                        className='session-input' 
+                        className='property-input' 
                         
                     />
                     <br />
                     <label className='home-input-field'>Latitude</label><br />
                     <input 
-                        type="text" 
+                        type="number" 
                         value={this.state.latitude} 
                         onChange={this.update('latitude')} 
-                        className='session-input' 
+                        className='property-input' 
                         
                     />
                     <br />
                     <label className='home-input-field'>Longitude</label><br />
                     <input 
-                        type="text" 
+                        type="number" 
                         value={this.state.longitude} 
                         onChange={this.update('longitude')} 
-                        className='session-input' 
+                        className='property-input' 
                         
                     />
                     <br />
@@ -104,7 +105,7 @@ class PropertyForm extends React.Component {
                         type="text" 
                         value={this.state.city} 
                         onChange={this.update('city')} 
-                        className='session-input' 
+                        className='property-input' 
                         
                     />
                     <br />
@@ -113,52 +114,60 @@ class PropertyForm extends React.Component {
                         type="text" 
                         value={this.state.state} 
                         onChange={this.update('state')} 
-                        className='session-input' 
+                        className='property-input' 
                        
                     />
                     <br/>
                     <label className='home-input-field'>Zip Code</label><br />
                     <input 
-                        type="text" 
+                        type="number" 
                         value={this.state.zipcode} 
                         onChange={this.update('zipcode')} 
-                        className='session-input' 
+                        className='property-input' 
                         
                     />
                     <br/>
                     <label className='home-input-field'>Bedrooms</label><br />
                     <input 
-                        type="text" 
+                        type="number" 
                         value={this.state.bedrooms} 
                         onChange={this.update('bedrooms')} 
-                        className='session-input' 
+                        className='property-input' 
                         
                     />
                     <br/>
                     <label className='home-input-field'>Bathrooms</label><br />
                     <input 
-                        type="text" 
+                        type="number" 
                         value={this.state.bathrooms} 
                         onChange={this.update('bathrooms')} 
-                        className='session-input' 
+                        className='property-input' 
                        
                     />
                     <br/>
                     <label className='home-input-field'>Square Footage</label><br />
                     <input 
-                        type="text" 
+                        type="number" 
                         value={this.state.sqft} 
                         onChange={this.update('sqft')} 
-                        className='session-input' 
+                        className='property-input' 
                        
                     />
                     <br/>
                     <label className='home-input-field'>Price</label><br />
                     <input 
-                        type="text" 
+                        type="number" 
                         value={this.state.price} 
                         onChange={this.update('price')} 
-                        className='session-input' 
+                        className='property-input' 
+                        
+                    />
+                    <br/>
+                    <label className='home-input-field'>Description</label><br />
+                    <textarea 
+                        value={this.state.description} 
+                        onChange={this.update('description')} 
+                        className='property-textarea' 
                         
                     />
                     <br/>

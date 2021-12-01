@@ -30,7 +30,12 @@ class PropertyShow extends React.Component {
                     <div className='show-map'>
                         <MiniMap property={property} />
                     </div>
-                    <div className='show-description'></div>
+                    <div className='description-container'>
+                        <p className='overview'>Overview</p>
+                        <p className='description'>
+                            {property.description}
+                        </p>
+                    </div>
                </div> 
             </div>
         )

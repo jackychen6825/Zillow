@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200&family=Montserrat:wght@100;300&family=Oswald:wght@200;400&family=Roboto:wght@100&display=swap');
+
 .session-form-container {
    display: flex;
    justify-content: center;
@@ -106,7 +108,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
+    width: 800px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -163,7 +165,7 @@
 }
 
 .show-price {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     font-weight: bold;
     font-size: 22px;
     margin-top: 10px;
@@ -172,7 +174,7 @@
 }
 
 .show-layout {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     font-size: 9px;
     margin-left: 5px;
     margin-top: 22px;
@@ -181,7 +183,7 @@
 
 .show-address {
   font-size: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   margin-left: 5px;
 }
 
@@ -200,6 +202,7 @@
     font-size: 12px;
     color: dodgerblue;
     margin-right: 5px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .tour {
@@ -209,7 +212,7 @@
     width: 45%;
     background-color: dodgerblue;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     font-size: 12px;
     border: 1px solid dodgerblue;
 }
@@ -224,7 +227,24 @@
   height: 100%;
 }
 
-.description {
+.description-container {
   height: 35%;
   border-bottom: 1px solid lightgrey;
+  
+}
+
+.overview {
+  margin-block-start: 0px;
+  font-size: 14px;
+  padding: 10px;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;
+  margin-block-end: 0px;
+}
+
+.description {
+    margin-block-start: 0px;
+    font-size: 12px;
+    padding: 0px 10px 10px 10px;
+    font-family: 'Fira Sans', sans-serif;
 }

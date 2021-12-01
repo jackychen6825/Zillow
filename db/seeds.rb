@@ -7,18 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Property.create(
-    address: "1256 72nd Street, Brooklyn, NY 11228",
-    latitude: 1235.234,
-    longitude: 9812.123,
-    city: 'Brooklyn',
-    state: 'NY',
-    zipcode: 11228, 
-    bedrooms: 4,
-    bathrooms: 2, 
-    sfqt: 1200,
-    price: 1600000,
-    for_sale: true, 
-    owner_id: 1
-    
-)
+Property.delete_all
+User.delete_all

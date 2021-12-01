@@ -41,7 +41,8 @@ class Api::PropertiesController < ApplicationController
             :bathrooms, 
             :sqft, 
             :price, 
-            :for_sale
+            :for_sale,
+            :description
         )
     end
 

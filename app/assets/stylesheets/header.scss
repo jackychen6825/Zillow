@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Montserrat:wght@100;200;300;400&display=swap');
 
 .header-container {
     display: flex;
@@ -14,7 +15,8 @@
 }
 
 .header-container a {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     font-size: 12px;
     text-decoration: none; 
     color: black;
@@ -38,6 +40,8 @@
     width: 12vw;
     height: 45px;
 }
+
+
 
 .header-container a:hover {
     color: blue;

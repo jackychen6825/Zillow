@@ -15,7 +15,8 @@ class PropertyForm extends React.Component {
             sqft: '',
             price: '',
             for_sale: true,
-            description: ''
+            description: '',
+            photoFile: null
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
@@ -66,6 +67,12 @@ class PropertyForm extends React.Component {
         })
     }
 
+    handleFile(e){
+        this.setState({
+            photoFile: e.currentTarget.files[0]
+        })
+    }
+
 
     render(){
         return (
@@ -73,6 +80,10 @@ class PropertyForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className='property-form'>
             
                     <br />
+                    <label className='home-input-field'>Photos</label><br/>
+                    <input type="file" onChange={this.handleFile.bind(this)}/>
+
+                    <br/>
                     <label className='home-input-field'>Address</label><br/>
                     <input 
                         type="text" 

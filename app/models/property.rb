@@ -24,6 +24,9 @@ class Property < ApplicationRecord
     validates_inclusion_of :for_sale, in: [true, false]
     validates_uniqueness_of :latitude, scope: :longitude
 
+    #active storage photos 
+    has_many_attached :photos
+
     def self.in_bounds(bounds) #params[:bounds] = bounds but params[:bounds] = nil 
         self.where("latitude < ?", bounds[:northEast][:lat])
         .where("latitude > ?", bounds[:southWest][:lat])

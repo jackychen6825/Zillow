@@ -13,7 +13,7 @@ class PropertyShow extends React.Component {
             <div className='property-show-container'>
                <div className='show-images'>
                     {property.photoURLs.map(
-                        photo => <img className='show-photo' src={photo} alt="" />
+                        (photo, idx) => <div key={idx} className='single-photo'><img key={idx} className='show-photo' src={photo} alt="" /></div>
                     )}  
                </div>
                <div className='show-details-container'>

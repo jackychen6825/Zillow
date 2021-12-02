@@ -5,6 +5,7 @@ const handleChange = (filter, updateFilter) => (e) => (
 ); 
 
 const FilterForm = ({ minPrice, maxPrice, updateFilter }) => (
+
     <div className='filter-container'>
         <label className='home-input-field'>Minimum Price</label><br />
         <input

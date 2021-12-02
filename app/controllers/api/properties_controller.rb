@@ -17,6 +17,7 @@ class Api::PropertiesController < ApplicationController
     end 
 
     def create
+        debugger
         @property = Property.new(property_params)
         @property.owner_id = current_user.id 
 
@@ -42,7 +43,8 @@ class Api::PropertiesController < ApplicationController
             :sqft, 
             :price, 
             :for_sale,
-            :description
+            :description,
+            :photos
         )
     end
 

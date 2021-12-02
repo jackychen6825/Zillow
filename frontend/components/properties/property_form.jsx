@@ -16,7 +16,7 @@ class PropertyForm extends React.Component {
             price: '',
             for_sale: true,
             description: '',
-            photoFile: null
+            photoFiles: null
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
@@ -49,8 +49,25 @@ class PropertyForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createProperty(this.state)
-        this.navigatetoSearch()
+
+        //making use of form data and implementing photos for the backend 
+        const formData = new FormData();
+        formData.append('property[address]', this.state.address);
+        formData.append('property[latitude]', this.state.latitude);
+        formData.append('property[longitude]', this.state.longitude);
+        formData.append('property[city]', this.state.city);
+        formData.append('property[state]', this.state.state);
+        formData.append('property[zipcode]', this.state.zipcode);
+        formData.append('property[bedrooms]', this.state.bedrooms);
+        formData.append('property[bathrooms]', this.state.bathrooms);
+        formData.append('property[sqft]', this.state.sqft);
+        formData.append('property[price]', this.state.price);
+        formData.append('property[for_sale]', this.state.for_sale);
+        formData.append('property[description]', this.state.description);
+        formData.append('property[photos]', this.state.photoFiles);
+
+        this.props.createProperty(formData);
+        this.navigatetoSearch();
     }
 
     //handles properties for sale --
@@ -69,7 +86,7 @@ class PropertyForm extends React.Component {
 
     handleFile(e){
         this.setState({
-            photoFile: e.currentTarget.files[0]
+            photoFiles: e.currentTarget.files[0]
         })
     }
 
@@ -80,7 +97,6 @@ class PropertyForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className='property-form'>
             
                     <br />
-                    <label className='home-input-field'>Photos</label><br/>
                     <input type="file" onChange={this.handleFile.bind(this)}/>
 
                     <br/>

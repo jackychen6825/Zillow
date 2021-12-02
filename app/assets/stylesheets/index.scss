@@ -12,9 +12,11 @@
 .property-index-container {
     display: flex;
     width: 50%;
+    height: 570px;
     flex-wrap: wrap;
     padding-left: 8px;
     padding-top: 8px;
+    overflow-y: auto;
 }
 
 .property-item {
@@ -23,7 +25,7 @@
     border-bottom: 3px solid blue;
     flex-wrap: wrap;
     width: 45%;
-    height: 30%;
+    height: 225px;
     margin: 5px;
 
 }
@@ -38,7 +40,7 @@
 }
 
 .price {
-    font-size: 10px;
+    font-size: 12px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 400;
     margin: 2px;

@@ -16,7 +16,7 @@ class PropertyForm extends React.Component {
             price: '',
             for_sale: true,
             description: '',
-            photoFiles: null
+            photos: []
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
@@ -64,7 +64,11 @@ class PropertyForm extends React.Component {
         formData.append('property[price]', this.state.price);
         formData.append('property[for_sale]', this.state.for_sale);
         formData.append('property[description]', this.state.description);
-        formData.append('property[photos]', this.state.photoFiles);
+        
+        //taking care of photos:
+        for (let i = 0; i < this.state.photos.length; i++) {
+            formData.append("property[photos][]", this.state.photos[i]);
+        }
 
         this.props.createProperty(formData);
         this.navigatetoSearch();
@@ -86,7 +90,7 @@ class PropertyForm extends React.Component {
 
     handleFile(e){
         this.setState({
-            photoFiles: e.currentTarget.files[0]
+            photos: e.currentTarget.files
         })
     }
 
@@ -97,8 +101,7 @@ class PropertyForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className='property-form'>
             
                     <br />
-                    <input type="file" onChange={this.handleFile.bind(this)}/>
-
+                    <input type="file" onChange={this.handleFile.bind(this)}  multiple />
                     <br/>
                     <label className='home-input-field'>Address</label><br/>
                     <input 

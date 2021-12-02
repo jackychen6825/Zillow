@@ -12,12 +12,11 @@ class Api::PropertiesController < ApplicationController
     end
 
     def show 
-        @property = Property.find(params[:id])
+        @property = Property.with_attached_photos.find(params[:id])
         render :show 
     end 
 
     def create
-        debugger
         @property = Property.new(property_params)
         @property.owner_id = current_user.id 
 
@@ -44,7 +43,7 @@ class Api::PropertiesController < ApplicationController
             :price, 
             :for_sale,
             :description,
-            :photos
+            photos: []
         )
     end
 

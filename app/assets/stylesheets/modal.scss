@@ -134,8 +134,13 @@
   border-right: 1px solid lightgrey;
   width: 60%;
   display: flex;
+  overflow-y: auto;
 }
 
+.show-photo {
+  width: 100%;
+  height: 540px;
+}
 
 
 .show-details-container {

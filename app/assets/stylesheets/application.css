@@ -14,8 +14,11 @@
  *= require_self
  */
 
+
 #map-container{
     width: 700px;
-    height: 600px;
+    height: 570px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+

@@ -24,6 +24,9 @@ class Property < ApplicationRecord
     validates_inclusion_of :for_sale, in: [true, false]
     validates_uniqueness_of :latitude, scope: :longitude
 
+    #validates that each posting has photo(s)
+    validates :ensure_photos
+
     #active storage photos 
     has_many_attached :photos
 
@@ -33,4 +36,10 @@ class Property < ApplicationRecord
         .where("longitude > ?", bounds[:southWest][:lng])
         .where("longitude < ?", bounds[:northEast][:lng])
     end
+
+    def ensure_photos
+        unless self.photos.attached?
+            errors[:photos] << "must be attached"
+        end 
+    end 
 end

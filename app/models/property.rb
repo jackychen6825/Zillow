@@ -25,9 +25,8 @@ class Property < ApplicationRecord
     validates_uniqueness_of :latitude, scope: :longitude
 
     #validates that each posting has photo(s)
-    validates :ensure_photos
-
-    #active storage photos 
+    validate :ensure_photos
+    
     has_many_attached :photos
 
     def self.in_bounds(bounds) #params[:bounds] = bounds but params[:bounds] = nil 

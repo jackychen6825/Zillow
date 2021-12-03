@@ -240,7 +240,7 @@
 .description-container {
   height: 35%;
   border-bottom: 1px solid lightgrey;
-  
+  overflow-y: auto;
 }
 
 .overview {
@@ -258,5 +258,5 @@
     padding: 0px 10px 10px 10px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
-    overflow-y: auto;
 }
+

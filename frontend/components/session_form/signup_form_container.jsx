@@ -13,7 +13,7 @@ const mapSTP = ({ errors }) => ({
 const mapDTP = (dispatch) => ({
     processForm: user => dispatch(signup(user)), 
     otherForm: (
-        <a onClick={() => dispatch(openModal('login'))} > 
+        <a className='other-form' onClick={() => dispatch(openModal('login'))} > 
             Sign in
         </a>
     ),

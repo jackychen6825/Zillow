@@ -56,9 +56,9 @@ class SessionForm extends React.Component{
             <div className='session-form-container'>
                 <form onSubmit={this.handleSubmit} className='session-form-box'>
                     
-                    <p className='session-intro'>Welcome to Millow</p>
+                    <p className='session-intro'>Welcome to Millow <i class="fas fa-home"></i></p>
 
-                    {this.props.formType} {this.props.otherForm}
+                    <p className='session-option-container'><span className='current-option'>{this.props.formType}</span> <span>{this.props.otherForm}</span></p>
                     <div onClick={this.props.closeModal} className='close-x'>X</div>
                     {this.renderErrors()}
                     <div className='session-form'>

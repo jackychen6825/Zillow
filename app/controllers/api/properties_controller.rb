@@ -6,7 +6,15 @@ class Api::PropertiesController < ApplicationController
         if params[:minPrice] && params[:maxPrice]
             properties = properties.where(price: price_range)
         end 
-        
+
+        if params[:minBeds] #if there is a minBeds key in our params apply the filters 
+            properties = properties.where("bedrooms > ?", Integer(params[:minBeds]) - 1)
+        end 
+
+        if params[:minBaths] #if there is a minBeds key in our params apply the filters 
+            properties = properties.where("bathrooms > ?", Integer(params[:minBaths]) - 1)
+        end 
+
         @properties = properties
         render :index 
     end

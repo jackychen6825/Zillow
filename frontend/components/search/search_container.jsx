@@ -6,7 +6,9 @@ import { openModal } from "../../actions/modal_actions";
 const mapSTP = ({ entities, ui }) => ({
     properties: Object.values(entities.properties),
     minPrice: ui.filters.minPrice,
-    maxPrice: ui.filters.maxPrice
+    maxPrice: ui.filters.maxPrice,
+    minBeds: ui.filters.minBeds,
+    minBaths: ui.filters.minBaths,
 })
 
 const mapDTP = dispatch => ({

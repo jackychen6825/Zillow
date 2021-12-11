@@ -4,7 +4,7 @@ const handleChange = (filter, updateFilter) => (e) => (
     updateFilter(filter, parseInt(e.target.value))
 ); 
 
-const FilterForm = ({ minPrice, maxPrice, updateFilter }) => (
+const FilterForm = ({ minPrice, maxPrice, minBeds, minBaths, updateFilter }) => (
 
     <div className='filter-container'>
         <label className='home-input-field'>Minimum Price</label><br />
@@ -19,6 +19,20 @@ const FilterForm = ({ minPrice, maxPrice, updateFilter }) => (
             className='filter-input'
             type="number"
             value={maxPrice} />
+        <label className='home-filter-field'>Minimum Beds
+            <input
+            onChange={handleChange('minBeds', updateFilter)}
+            className='filter-input'
+            type="number"
+            value={minBeds} />
+        </label>
+        <label className='home-filter-field'>Minimum Bathrooms
+            <input
+            onChange={handleChange('minBaths', updateFilter)}
+            className='filter-input'
+            type="number"
+            value={minBaths} />
+        </label>
     </div>
 ) 
 

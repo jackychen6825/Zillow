@@ -2,10 +2,10 @@
 
 .header-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    height: 50px;
-    border-bottom: solid 1px lightgray;  
+    height: 70px;
+    border-bottom: solid 1px lightgray;
 }
 
 .header-left, .header-right {
@@ -15,12 +15,12 @@
 }
 
 .header-container a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    text-decoration: none; 
+    font-family: 'ROBOTO';
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: none;
     color: black;
-    margin: 8px;
+    margin: 12px;
 }
 
 .logo-container {
@@ -37,8 +37,8 @@
 }
 
 .logo {
-    width: 12vw;
-    height: 45px;
+    width: 180px;
+    height: 70px;
 }
 
 

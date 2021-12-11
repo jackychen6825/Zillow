@@ -12,7 +12,7 @@
 .property-index-container {
     display: flex;
     width: 50%;
-    height: 570px;
+    height: 900px;
     flex-wrap: wrap;
     padding-left: 8px;
     padding-top: 8px;
@@ -24,8 +24,8 @@
     border: 1px solid rgb(233, 233, 233);
     border-bottom: 3px solid blue;
     flex-wrap: wrap;
-    width: 45%;
-    height: 225px;
+    width: 48%;
+    height: 38%;
     margin: 5px;
 
 }
@@ -40,7 +40,7 @@
 }
 
 .price {
-    font-size: 12px;
+    font-size: 18px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 400;
     margin: 2px;
@@ -48,20 +48,21 @@
 
 .details {
     margin: 2px;
-    font-size: 10px;
+    font-size: 13px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
 }
 
 .address {
     margin: 2px;
-    font-size: 10px;
+    font-size: 13px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
 }
 
 .filter-container {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid rgb(236, 235, 235);
+    height: 40px;
     display: flex;
     padding: 5px;
 

@@ -3,7 +3,7 @@
 .session-form-container {
    display: flex;
    justify-content: center;
-   width: 320px;
+   width: 500px;
  }
 
  .session-form {
@@ -20,35 +20,38 @@
  }
 
  .session-intro{
-   font-size: 20px;
-   font-family: 'Roboto', sans-serif;
-   font-weight: 300;
+   font-size: 30px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 400;
    margin-bottom: 5px;
  }
 
  .session-input {
-  height: 25px;
+  width: 90%;
+  height: 50px;
   margin-top: 5px;
-  background: lightslategray;
+  margin-left: 10px;
+  background: white;
   background-color: rgba(245, 244, 244, 0.948);
   border: 1px solid lightgray;
   border-radius: 5px;
   padding: 0px 6px;
-  color: white;
+  color: black;
   font-family: 'roboto', sans-serif;
   font-weight: 300;
+  font-size: 20px;
  }
 
  .session-form-box {
    border: 1px solid lightgray;
-   border-radius: 10px;
-   padding: 20px;
-   background: white;
-   position: relative;
-   width: 100%;
-   font-family: 'roboto', sans-serif;
-   font-weight: 300;
-   font-size: 12px;
+    border-radius: 12px;
+    padding: 20px;
+    background: white;
+    /* position: relative; */
+    width: 100%;
+    font-family: 'fira-sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
   
  }
 
@@ -65,14 +68,21 @@
    border-bottom: 1px solid grey;
  }
 
+ .input-labels {
+   margin-left: 8px; 
+ }
+
  .session-submit {
-    height: 31px;
+    height: 50px;
     background-color: dodgerblue;
     border: 1px dodgerblue solid;
     border-radius: 4px;
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: 300;
+    font-size: 20px;
+    width: 93%;
+    margin-left: 2.5%;
  }
  
 .modal-background {
@@ -90,10 +100,8 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   padding-top: 50px;
-   padding-bottom: 50px;
-   width: 400px;
-   height: 500px; 
+   width: 480px;
+   height: 750px; 
    display: flex;
    justify-content: center;
  }
@@ -103,10 +111,8 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   padding-top: 50px;
-   padding-bottom: 50px;
-   width: 400px;
-   height: 500px; 
+   width: 480px;
+   height: 750px; 
    display: flex;
    justify-content: center;
  }
@@ -116,7 +122,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
+    width: 1200px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -135,6 +141,7 @@
 
  .current-option {
    border-bottom: 2px solid dodgerblue;
+   margin-right: 10px;
  }
 
 
@@ -190,26 +197,26 @@
 .show-price {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 40px;
     margin-top: 10px;
-    margin-left: 5px;
+    margin-left: 10px;
     height: fit-content;
 }
 
 .show-layout {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 200;
-    font-size: 10px;
+    font-size: 16px;
     margin-left: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
     height: fit-content;
 }
 
 .show-address {
-  font-size: 12px;
+  font-size: 22px;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
-  margin-left: 7px;
+  margin-left: 10px;
 }
 
 .buttons-container {
@@ -219,27 +226,27 @@
 }
 
 .agent {
-    height: 30px;
+    height: 70%;
     width: 45%;
     background-color: white;
     border-radius: 5px;
     border: 1px solid dodgerblue;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 300;
     color: dodgerblue;
-    margin-right: 5px;
+    margin-right: 15px;
     font-family: 'Fira Sans', sans-serif;
 }
 
 .tour {
     /* margin-right: 8px; */
     border-radius: 5px;
-    height: 30px;
+    height: 70%;
     width: 45%;
     background-color: dodgerblue;
     color: white;
     font-family: 'Fira Sans', sans-serif;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 300;
     border: 1px solid dodgerblue;
 }
@@ -262,7 +269,7 @@
 
 .overview {
   margin-block-start: 0px;
-  font-size: 16px;
+  font-size: 26px;
   padding: 10px;
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
@@ -271,7 +278,7 @@
 
 .description {
     margin-block-start: 0px;
-    font-size: 12px;
+    font-size: 18px;
     padding: 0px 10px 10px 10px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;

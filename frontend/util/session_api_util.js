@@ -20,3 +20,10 @@ export const logout = () => (
         method: "DELETE"
     })
 )
+
+export const show = id => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/users/${id}`
+    })
+)

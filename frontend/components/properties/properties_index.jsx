@@ -7,7 +7,7 @@ class PropertyIndex extends React.Component {
     }
 
     render(){
-        const { properties, openModal } = this.props
+        const { properties, openModal, currentUser, makeSave, removeSave } = this.props
         return (
             <div className='property-index-container'>
                 {
@@ -15,6 +15,9 @@ class PropertyIndex extends React.Component {
                         <PropertyIndexItem 
                             key={property.id} 
                             property={property} 
+                            currentUser={currentUser}
+                            makeSave={makeSave}
+                            removeSave={removeSave}
                             openModal={openModal}
                         />
                     ))

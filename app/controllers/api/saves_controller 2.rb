@@ -3,7 +3,7 @@ class Api::SavesController < ApplicationController
     def create
         @save = Save.new(property_id: params[:property_id]) 
         @save.user_id = current_user.id
-         
+
         if @save.save
             render :show 
         else 

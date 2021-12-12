@@ -1,4 +1,4 @@
-import { UPDATE_FILTER } from '../actions/filter_actions';
+import { UPDATE_FILTER, CLEAR_FILTERS } from '../actions/filter_actions';
 
 const defaultState = { bounds: {}, minPrice: 1, maxPrice: 10000000, minBeds: 0, minBaths: 0 }; 
 
@@ -11,6 +11,8 @@ export default function filterReducer(state = defaultState, action) {
             //key into filter and update it 
             nextState[action.filter] = action.value
             return nextState;  
+        case CLEAR_FILTERS:
+            return defaultState;
         default:
             return state;
     }

@@ -29,6 +29,9 @@ class Property < ApplicationRecord
     
     has_many_attached :photos
 
+    #association to saves can do this before rails magic 
+    has_many :saves 
+
     def self.in_bounds(bounds) #params[:bounds] = bounds but params[:bounds] = nil 
         self.where("latitude < ?", bounds[:northEast][:lat])
         .where("latitude > ?", bounds[:southWest][:lat])

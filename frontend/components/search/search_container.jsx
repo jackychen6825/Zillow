@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Search from "./search";
-import { updateFilter } from "../../actions/filter_actions";
+import { updateFilter, removeFilters } from "../../actions/filter_actions";
 import { openModal } from "../../actions/modal_actions";
 
 const mapSTP = ({ entities, ui }) => ({
@@ -13,6 +13,7 @@ const mapSTP = ({ entities, ui }) => ({
 
 const mapDTP = dispatch => ({
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+    removeFilters: () => dispatch(removeFilters()),
     openModal: (modal, property) => dispatch(openModal(modal, property))
 })
 

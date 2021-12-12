@@ -1,0 +1,1 @@
+json.extract! @save, :id, :property_id, :user_id

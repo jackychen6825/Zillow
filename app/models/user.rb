@@ -17,8 +17,10 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token 
 
-    #need saves to display saves
-    has_many :saves
+    has_many :saves, 
+        foreign_key: :user_id,
+        primary_key: :id,
+        class_name: :Save
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

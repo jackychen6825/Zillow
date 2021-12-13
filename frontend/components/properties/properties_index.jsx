@@ -13,6 +13,7 @@ class PropertyIndex extends React.Component {
                 {
                     properties.map(property => (
                         <PropertyIndexItem 
+                            saved={false}
                             key={property.id} 
                             property={property} 
                             currentUser={currentUser}

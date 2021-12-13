@@ -14,16 +14,20 @@ export default class Saved extends Component {
         const { properties, currentUser, openModal, makeSave, removeSave } = this.props;
         return (
             <div className="saved-index-container">
-                {properties.map(
-                    property => <PropertyIndexItem 
-                                    key={property.id} 
-                                    property={property} 
-                                    currentUser={currentUser}
-                                    makeSave={makeSave}
-                                    removeSave={removeSave}
-                                    openModal={openModal}
-                                />
-                ) }
+                <div className='saved-index-header'>Saved homes</div>
+                <div className='saved-index'>    
+                    {properties.map(
+                        property => <PropertyIndexItem 
+                                        saved={true}
+                                        key={property.id} 
+                                        property={property} 
+                                        currentUser={currentUser}
+                                        makeSave={makeSave}
+                                        removeSave={removeSave}
+                                        openModal={openModal}
+                                    />
+                    ) }
+                </div>
             </div>
         )
     }

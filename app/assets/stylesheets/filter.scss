@@ -1,5 +1,9 @@
 @import url(./reset.scss);
 
+.hide {
+    display: none;
+}
+
 .hide-filter {
     display: none;
 }
@@ -25,6 +29,64 @@
 
 .filter-btn:hover {
     border: 2px solid dodgerblue;
+}
+
+.user-dropdown-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    top: 74px;
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    color: black;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    right: 40px;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
+}
+
+.dropdown-items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 22%;
+    font-family: 'roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.dropdown-items a{
+    text-decoration: none;
+}
+
+.dropdown-items:hover {
+    background-color: #e6faff;
+}
+
+.dropdown-items-signout:hover {
+    background-color: #e6faff;
+}
+
+.dropdown-items-signout {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 22%;
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    border-top: 2px solid lightgray;
+    padding-left: 10px;
+}
+
+.fas.fa-house-user.fa-2x {
+    color: dodgerblue;
 }
 
 .show-filter-price {

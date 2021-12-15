@@ -69,13 +69,26 @@
  }
 
  .input-labels {
-   margin-left: 8px; 
+   margin-left: 10px; 
  }
 
  .session-submit {
     height: 50px;
     background-color: dodgerblue;
     border: 1px dodgerblue solid;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 300;
+    font-size: 20px;
+    width: 93%;
+    margin-left: 2.5%;
+ }
+
+ .session-submit-guest {
+    height: 50px;
+    background-color: black;
+    border: 1px black solid;
     border-radius: 4px;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -130,8 +143,8 @@
 
  .close-x {
    position: absolute;
-   top: 10px;
-   right: 10px;
+   top: 15px;
+   right: 15px;
    cursor: pointer;
  }
 
@@ -144,6 +157,9 @@
    margin-right: 10px;
  }
 
+ .fas.fa-home {
+   color: dodgerblue;
+ }
 
 //  show modal 
 

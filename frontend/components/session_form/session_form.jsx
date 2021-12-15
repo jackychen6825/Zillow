@@ -58,7 +58,7 @@ class SessionForm extends React.Component{
                     
                     <p className='session-intro'>Welcome to Millow <i className="fas fa-home"></i></p>
 
-                    <p className='session-option-container'><span className='current-option'>{this.props.formType}</span> <span>{this.props.otherForm}</span></p>
+                    <p className='session-option-container'><span className='current-option'>{this.props.formType === 'login' ? 'Login' : 'Signup'}</span> <span>{this.props.otherForm}</span></p>
                     <div onClick={this.props.closeModal} className='close-x'>X</div>
                     {this.renderErrors()}
                     <div className='session-form'>
@@ -73,9 +73,9 @@ class SessionForm extends React.Component{
                     <input type="password" value={this.state.password} onChange={this.update('password')} className='session-input' placeholder='Enter password' />
                        
                         <br/>
-                        <input type="submit" className='session-submit' value={this.props.formType} />
+                        <input type="submit" className='session-submit' value={this.props.formType === 'login' ? 'Login' : 'Signup'} />
                         <br/>
-                        <input type="submit" className='session-submit' value='Guest Login' onClick={this.guestLogin}/>
+                        <input type="submit" className='session-submit-guest' value='Guest Login' onClick={this.guestLogin}/>
                     </div>
 
                 </form>

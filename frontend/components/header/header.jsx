@@ -8,13 +8,13 @@ const Header = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <div className="header-container">
             <div className="header-left">
-                <Link to="/">Buy</Link>
-                <Link to="/">Rent</Link>
-                <Link to="/properties/new">Sell</Link>
+                <Link to="/buy">Buy</Link>
+                <Link to="/buy">Rent</Link>
+                <a onClick={() => openModal('login')}>Sell</a>
                 <Link to="/">Agent Finder</Link>
             </div>
 
-            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Xo7bzpMz7a_CcTXol6Aw8Vx7C0inIf4nz54w0Ds4Hgo4gAlgF8nBrYrjerVjif00S2YpmTGvsKgKKeIqFaMuxh_9enSyyQw6xQwrBq7a4w1MFymcClsmWbd6yHaR7ZKaiK9eq8hLSQ=w2400" className="logo" /> </Link>
+            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/wWFmNNqPkMgnDftKPPNkJuVhyuwvY2RkSrB9X7g9hRHM22YI3Y6GphqwBJ2YS3yR3gdysAC9BWCLaLaGGdI1yBFSDxtoVsaftELzo_U1fRQPXTTZgGoxX9Ss34ljy0VvSQtb1rYvow=w2400" className="logo" /> </Link>
 
             <div className="header-right">
                 <Link to="/">Manage Rentals</Link>
@@ -35,7 +35,7 @@ const Header = ({ currentUser, logout, openModal }) => {
                 <Link to="/">Agent Finder</Link>
             </div>
 
-            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Xo7bzpMz7a_CcTXol6Aw8Vx7C0inIf4nz54w0Ds4Hgo4gAlgF8nBrYrjerVjif00S2YpmTGvsKgKKeIqFaMuxh_9enSyyQw6xQwrBq7a4w1MFymcClsmWbd6yHaR7ZKaiK9eq8hLSQ=w2400" className="logo" /> </Link>
+            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/wWFmNNqPkMgnDftKPPNkJuVhyuwvY2RkSrB9X7g9hRHM22YI3Y6GphqwBJ2YS3yR3gdysAC9BWCLaLaGGdI1yBFSDxtoVsaftELzo_U1fRQPXTTZgGoxX9Ss34ljy0VvSQtb1rYvow=w2400" className="logo" /> </Link>
 
             <div className="header-right">
                 <Link to="/">Manage Rentals</Link>

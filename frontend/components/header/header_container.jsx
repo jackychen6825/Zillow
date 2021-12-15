@@ -9,7 +9,7 @@ const mapSTP = ({ session, entities }) => ({
 
 const mapDTP = dispatch => ({
     logout: () => dispatch(logout()),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: (modal, property) => dispatch(openModal(modal, property))
 });
 
 export default connect(mapSTP, mapDTP)(Header); 

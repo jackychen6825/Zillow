@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;500&family=Montserrat:wght@100;200;300;400&family=Outfit:wght@100;200;300&family=Playfair+Display&family=Roboto:wght@300;500;700&display=swap');
+
+.splash-container {
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.search-bar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    right: 0%;
+}
+
+#autocomplete {
+    background-color: white;
+    width: 60%;
+    height: 70px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
+}
+
+.search-btn {
+    margin-left: 10px;
+    background-color: white;
+    height: 70px;
+    width: 100px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
+}
+
+.fas.fa-search.fa-2x {
+    color: dodgerblue;
+}
+
+.splash-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.splash-image {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.splash-text-container {
+    position: absolute;
+    top: 22%;
+    right: 40%;
+}
+
+.splash-text {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+}
+
+.splash-nav-container {
+    position: absolute;
+    top: 105%;
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.splash-nav-text {
+    width: 100%;
+    height: 10%;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.splash-nav-text p  {
+    font-size: 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.upper-splash-nav-text {
+    font-family: 'Playfair Display';
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.splash-nav {
+    height: 70%;
+    width: 22%;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 25px;
+    margin: 15px;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
+    transition: box-shadow 1s, width 1s, height 1s;
+}
+
+.splash-nav:hover {
+    height: 72%;
+    box-shadow: -4px 0px 15px 5px rgba(121, 117, 117, 0.5); 
+    
+}
+
+.splash-nav-btn {
+    border: 1px solid dodgerblue;
+    border-radius: 3px;
+    color: dodgerblue;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px;
+}

@@ -11,7 +11,6 @@ const Header = ({ currentUser, logout, openModal }) => {
                 <Link to="/">Buy</Link>
                 <Link to="/">Rent</Link>
                 <Link to="/properties/new">Sell</Link>
-                <Link to="/">Home Loans</Link>
                 <Link to="/">Agent Finder</Link>
             </div>
 
@@ -30,10 +29,9 @@ const Header = ({ currentUser, logout, openModal }) => {
     const personalGreeting = () => (
         <div className="header-container">
             <div className="header-left">
-                <Link to="/">Buy</Link>
-                <Link to="/">Rent</Link>
+                <Link to="/buy">Buy</Link>
+                <Link to="/buy">Rent</Link>
                 <Link to="/properties/new">Sell</Link>
-                <Link to="/">Home Loans</Link>
                 <Link to="/">Agent Finder</Link>
             </div>
 

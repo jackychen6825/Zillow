@@ -29,10 +29,10 @@ export default class UserSession extends Component {
                 </div>
 
                 <div className={this.state.dropdownOpen ? `user-dropdown-container`: 'hide'}>
-                    <div className="dropdown-items"><Link to="/saved">Saved homes</Link></div>
-                    <div className="dropdown-items"><Link to="">Saved Search</Link></div>
-                    <div className="dropdown-items"><Link to="">Your home</Link></div>
-                    <div className="dropdown-items-signout" onClick={logout}><p>Sign out</p></div>
+                    <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/saved">Saved homes</Link></div>
+                    <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/saved">Saved search</Link></div>
+                    <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/properties/new">Your home</Link></div>
+                    <div onClick={this.toggleDropdown} className="dropdown-items-signout" onClick={logout}><Link to="/">Sign out</Link></div>
                 </div>
             </div>
         )

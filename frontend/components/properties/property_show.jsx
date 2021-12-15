@@ -4,6 +4,29 @@ import MiniMap from "../map/mini_map";
 class PropertyShow extends React.Component {
     constructor(props){
         super(props)
+        this.handleRemoveSave = this.handleRemoveSave.bind(this),
+        this.handleSave = this.handleSave.bind(this)
+        this.renderSaves = this.renderSaves.bind(this)
+    }
+
+    handleSave() {
+        if (this.props.currentUser) {
+            this.props.makeSave(this.props.property.id)
+        } else {
+            this.props.openModal('login')
+        }
+    }
+
+    handleRemoveSave() {
+        this.props.removeSave(this.props.property.id)
+    }
+
+    renderSaves() {
+        if (this.props.currentUser) {
+            return this.props.currentUser.saves.includes(this.props.property.id) ? <div className='save-container-show' onClick={this.handleRemoveSave}><i className="fas fa-heart fa-2x show"></i></div> : <div className='save-container-show' onClick={this.handleSave}><i className="far fa-heart fa-2x show"></i></div>
+        } else {
+            return <div className='save-container-show' onClick={this.handleSave}><i className="far fa-heart fa-2x show"></i></div>
+        }
     }
     
     render(){
@@ -11,6 +34,7 @@ class PropertyShow extends React.Component {
 
         return (
             <div className='property-show-container'>
+                {this.renderSaves()}
                <div className='show-images'>
                     {property.photoURLs.map(
                         (photo, idx) => <div key={idx} className='single-photo'><img key={idx} className='show-photo' src={photo} alt="" /></div>

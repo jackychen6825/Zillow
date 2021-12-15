@@ -10,6 +10,7 @@ export default class FilterForm extends Component {
         }
 
         this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.handleClear = this.handleClear.bind(this);
     }
 
     toggleDropdown(field) {
@@ -31,6 +32,17 @@ export default class FilterForm extends Component {
     handleChange = (filter, updateFilter) => (e) => (
         updateFilter(filter, parseInt(e.target.value))
     ); 
+
+    handleClear(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.setState({
+            priceOpen: false,
+            bathsOpen: false,
+            bedsOpen: false
+        })
+        this.props.removeFilters()
+    }
 
     render() {
         const { minPrice, maxPrice, minBeds, minBaths, updateFilter, removeFilters } = this.props;
@@ -80,7 +92,7 @@ export default class FilterForm extends Component {
                     </div>
                 </div>
                 
-                <button onClick={removeFilters} className='filter-btn'>Clear</button>
+                <button onClick={this.handleClear} className='filter-btn'>Clear</button>
                 
             </div>
         )

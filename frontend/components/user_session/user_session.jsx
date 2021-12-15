@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
-export default class UserSession extends Component {
+class UserSession extends Component {
     constructor(props) {
         super(props)
         this.state = {
             dropdownOpen: ''
         }
 
-        this.userPresent = this.userPresent.bind(this)
-        this.toggleDropdown = this.toggleDropdown.bind(this)
-        this.handleSignin = this.handleSignin.bind(this)
+        this.userPresent = this.userPresent.bind(this);
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.handleSignin = this.handleSignin.bind(this);
     }
 
     toggleDropdown() {
@@ -32,7 +33,7 @@ export default class UserSession extends Component {
                     <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/saved">Saved homes</Link></div>
                     <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/saved">Saved search</Link></div>
                     <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/properties/new">Your home</Link></div>
-                    <div onClick={this.toggleDropdown} className="dropdown-items-signout" onClick={logout}><Link to="/">Sign out</Link></div>
+                    <div onClick={logout} className="dropdown-items-signout"><Link to="/">Sign out</Link></div>
                 </div>
             </div>
         )
@@ -54,3 +55,5 @@ export default class UserSession extends Component {
            return this.props.currentUser ? this.userPresent() : this.noUserPresent();
     }
 }
+
+export default withRouter(UserSession)

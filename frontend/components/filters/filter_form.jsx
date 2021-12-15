@@ -4,6 +4,7 @@ export default class FilterForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            search: '',
             priceOpen: "",
             bathsOpen: "",
             bedsOpen: ""
@@ -11,6 +12,33 @@ export default class FilterForm extends Component {
 
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.handleClear = this.handleClear.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.onPlaceChanged = this.onPlaceChanged.bind(this);
+    }
+
+    componentDidMount() {
+        this.autocomplete = new google.maps.places.Autocomplete(
+            document.getElementById('autocomplete-filter'), 
+            { componentRestrictions: { 'country': ['us'] } }
+        )
+
+        this.autocomplete.addListener('place_changed', this.onPlaceChanged)
+    }
+
+    onPlaceChanged(e) {
+        let place = this.autocomplete.getPlace();
+        
+        if (!place.geometry) {
+            document.getElementById('autocomplete').placeholder = 'Address, neighborhood, or ZIP'
+        } else {
+            this.setState({ search: place.formatted_address })
+        }
+    }
+
+    handleClick(e) {
+        e.preventDefault() 
+        this.props.updateFilter('address', this.state.search)
+        //no need to rerender because the address will change and the maps component is subscribed to address slike of state
     }
 
     toggleDropdown(field) {
@@ -48,6 +76,14 @@ export default class FilterForm extends Component {
         const { minPrice, maxPrice, minBeds, minBaths, updateFilter, removeFilters } = this.props;
         return (
             <div className='filter-container'>
+                <div className="search-bar-container-filter">
+                    <input 
+                        type="text"
+                        id="autocomplete-filter"
+                        placeholder='Enter an address, city, neighborhood, or ZIP code'
+                    />
+                    <button className="search-btn-filter" onClick={this.handleClick}><i className="fas fa-search"></i></button>
+                </div>
                 <div className='price-filter-container'>
                     <button className='filter-btn' onClick={this.toggleDropdown('priceOpen')}>Price</button>
                     <div className={this.state.priceOpen ? "show-filter-price" : "hide-filter"}>

@@ -57,7 +57,11 @@ class Map extends React.Component {
         });
     }
     
-    componentDidUpdate(){
+    componentDidUpdate(prevProps){
+        if (prevProps.address !== this.props.address) {
+            this.getLatLng(this.props.address)
+        }
+
         if (this.MarkerManager) {
             this.MarkerManager.updateMarkers(this.props.properties)
         }

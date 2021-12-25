@@ -25,7 +25,7 @@ class Map extends React.Component {
 
                 this.createMap();
             } else {
-                window.alert('Geocoder failed due to: ' + status);
+                // window.alert('Geocoder failed due to: ' + status);
             }
             }.bind(this))
     }

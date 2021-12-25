@@ -14,7 +14,7 @@ const Header = ({ currentUser, logout, openModal }) => {
                 <Link to="/">Agent Finder</Link>
             </div>
 
-            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/ux1A99sKq_7JR9_Q-2x6Gf1wOUIl2klr55_ZREj9IDRCKpR33AJ9YHxaWuXPX2nSSGMM55VwkwFjPN1kNvj4vb3lbPGTT-EuWWEsDQB9BuqEn5uG6STCPDLOtlUBOHoreQbvifsjVw=w2400" className="logo" /> </Link>
+            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Mi8qBC9eaJspl7S-MWKFT3f9llTQxcC9NP_B8ZK9UBwOTq8EtrqE7nI5_-AkkTJagOM2drVYZ_XBjkmxAr0DiuClKPFV6jFffaDtLfkiQMEUDhLZY8aJyf0H7uM1JBtkOVxS26-5Jg=w2400" className="logo" /> </Link>
 
             <div className="header-right">
                 <Link to="/">Manage Rentals</Link>
@@ -35,7 +35,7 @@ const Header = ({ currentUser, logout, openModal }) => {
                 <Link to="/">Agent Finder</Link>
             </div>
 
-            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/wWFmNNqPkMgnDftKPPNkJuVhyuwvY2RkSrB9X7g9hRHM22YI3Y6GphqwBJ2YS3yR3gdysAC9BWCLaLaGGdI1yBFSDxtoVsaftELzo_U1fRQPXTTZgGoxX9Ss34ljy0VvSQtb1rYvow=w2400" className="logo" /> </Link>
+            <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Mi8qBC9eaJspl7S-MWKFT3f9llTQxcC9NP_B8ZK9UBwOTq8EtrqE7nI5_-AkkTJagOM2drVYZ_XBjkmxAr0DiuClKPFV6jFffaDtLfkiQMEUDhLZY8aJyf0H7uM1JBtkOVxS26-5Jg=w2400" className="logo" /> </Link>
 
             <div className="header-right">
                 <Link to="/">Manage Rentals</Link>

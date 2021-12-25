@@ -17,9 +17,9 @@ const Header = ({ currentUser, logout, openModal }) => {
             <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Mi8qBC9eaJspl7S-MWKFT3f9llTQxcC9NP_B8ZK9UBwOTq8EtrqE7nI5_-AkkTJagOM2drVYZ_XBjkmxAr0DiuClKPFV6jFffaDtLfkiQMEUDhLZY8aJyf0H7uM1JBtkOVxS26-5Jg=w2400" className="logo" /> </Link>
 
             <div className="header-right">
-                <Link to="/">Manage Rentals</Link>
-                <Link to="/">Advertise</Link>
-                <Link to="/">Help</Link>
+                <Link to="/">Angel's List</Link>
+                <Link to="/">LinkedIn</Link>
+                <Link to="/">GitHub</Link>
                 <UserSessionContainer />
             </div>
         </div>
@@ -38,9 +38,9 @@ const Header = ({ currentUser, logout, openModal }) => {
             <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Mi8qBC9eaJspl7S-MWKFT3f9llTQxcC9NP_B8ZK9UBwOTq8EtrqE7nI5_-AkkTJagOM2drVYZ_XBjkmxAr0DiuClKPFV6jFffaDtLfkiQMEUDhLZY8aJyf0H7uM1JBtkOVxS26-5Jg=w2400" className="logo" /> </Link>
 
             <div className="header-right">
-                <Link to="/">Manage Rentals</Link>
-                <Link to="/">Advertise</Link>
-                <Link to="/">Help</Link>
+                <Link to="/">Angel's List</Link>
+                <Link to="/">LinkedIn</Link>
+                <Link to="/">GitHub</Link>
                 <UserSessionContainer />
             </div>
         </div>

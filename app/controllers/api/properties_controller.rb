@@ -15,8 +15,8 @@ class Api::PropertiesController < ApplicationController
             properties = properties.where("bathrooms > ?", Integer(params[:minBaths]) - 1)
         end 
 
-        if params[:saved_ids]
-            properties = properties.where(id: params[:saved_ids])
+        if params[:saved_ids]  
+            properties = properties.where(id: params[:saved_ids]) 
         end 
 
         @properties = properties

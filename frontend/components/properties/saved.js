@@ -7,7 +7,7 @@ export default class Saved extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchProperties({ saved_ids: this.props.saves })
+        this.props.fetchProperties({ saved_ids: this.props.saves, saved_page: true })
     }
 
     render() {

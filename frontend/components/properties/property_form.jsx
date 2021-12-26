@@ -14,7 +14,7 @@ class PropertyForm extends React.Component {
             bathrooms: '',
             sqft: '',
             price: '',
-            for_sale: true,
+            listing_type: 'sale',
             description: '',
             photos: []
         }
@@ -62,7 +62,7 @@ class PropertyForm extends React.Component {
         formData.append('property[bathrooms]', this.state.bathrooms);
         formData.append('property[sqft]', this.state.sqft);
         formData.append('property[price]', this.state.price);
-        formData.append('property[for_sale]', this.state.for_sale);
+        formData.append('property[listing_type]', this.state.listing_type);
         formData.append('property[description]', this.state.description);
         
         //taking care of photos:
@@ -77,14 +77,14 @@ class PropertyForm extends React.Component {
     //handles properties for sale --
     handleSale(){
         this.setState({
-            ['for_sale']: true 
+            ['listing_type']: 'sale' 
         })
     }
 
     //handles rentals --
     handleRent(){
         this.setState({
-            ['for_sale']: false 
+            ['listing_type']: 'rental' 
         })
     }
 
@@ -185,21 +185,21 @@ class PropertyForm extends React.Component {
                             <input
                                 type="radio"
                                 id='sale'
-                                checked={this.state.for_sale}
+                                checked={this.state.listing_type === 'sale'}
                                 onChange={this.handleSale}
                                 name='listing-type'
                             />
 
-                            <div className='label'><label htmlFor='sale' className='radio-label'>Sale</label></div>
+                            <div className={this.state.listing_type === 'sale' ? 'label-sale': 'label'}><label htmlFor='sale' className='radio-label'>Sale</label></div>
                             <input
                                 type="radio"
                                 id='rent'
-                                checked={!this.state.for_sale}
+                                checked={this.state.listing_type === 'rental'}
                                 onChange={this.handleRent}
                                 name='listing-type'
                             />
 
-                            <div className='label'><label htmlFor='rent' className='radio-label'>Rent</label></div>
+                            <div className={this.state.listing_type === 'rental' ? 'label-rental': 'label'}><label htmlFor='rent' className='radio-label'>Rent</label></div>
                         </div>
                     </div>
                     <div className='details-input'>
@@ -242,7 +242,7 @@ class PropertyForm extends React.Component {
                             value={this.state.price}
                             onChange={this.update('price')}
                             className='property-input'
-                            placeholder='Enter asking price'
+                            placeholder='Enter asking / rental price'
 
                         />
                         </div>

@@ -31,7 +31,7 @@ class Api::PropertiesController < ApplicationController
     def create
         @property = Property.new(property_params)
         @property.owner_id = current_user.id 
-
+        debugger
         if @property.save
             render :show
         else 
@@ -53,7 +53,7 @@ class Api::PropertiesController < ApplicationController
             :bathrooms, 
             :sqft, 
             :price, 
-            :for_sale,
+            :listing_type,
             :description,
             photos: []
         )

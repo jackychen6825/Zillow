@@ -114,6 +114,31 @@ input[type="radio" i] {
     margin-top: 20px;
 }
 
+.label-rental {
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    color: white;
+    background-color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.label-sale {
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    color: white;
+    background-color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .label {
     border: 1px solid dodgerblue;
     border-radius: 5px;

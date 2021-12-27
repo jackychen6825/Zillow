@@ -45,7 +45,7 @@ class PropertyShow extends React.Component {
                         <img src="https://lh3.googleusercontent.com/Xo7bzpMz7a_CcTXol6Aw8Vx7C0inIf4nz54w0Ds4Hgo4gAlgF8nBrYrjerVjif00S2YpmTGvsKgKKeIqFaMuxh_9enSyyQw6xQwrBq7a4w1MFymcClsmWbd6yHaR7ZKaiK9eq8hLSQ=w2400" className="show-logo" />
                     </div>
                     <div className='show-details'>
-                        <div className='show-price'>${property.price}</div>
+                        <div className='show-price'>${property.price.toLocaleString('en')}</div>
                         <div className='show-layout'>{property.bedrooms}bds | {property.bathrooms}ba | {property.sqft}sqft</div>
                         <span className='show-address'>{property.address}</span>
                         <div className='buttons-container'>

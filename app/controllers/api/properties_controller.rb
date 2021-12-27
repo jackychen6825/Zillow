@@ -20,7 +20,7 @@ class Api::PropertiesController < ApplicationController
         end 
 
         if params[:searchType] === 'buy'
-            properties = properties.where(listing_type: "buy")
+            properties = properties.where(listing_type: "sale")
         end 
 
         if params[:searchType] === 'rental'
@@ -39,7 +39,7 @@ class Api::PropertiesController < ApplicationController
     def create
         @property = Property.new(property_params)
         @property.owner_id = current_user.id 
-        debugger
+        
         if @property.save
             render :show
         else 

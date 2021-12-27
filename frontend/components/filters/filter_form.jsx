@@ -7,7 +7,9 @@ export default class FilterForm extends Component {
             search: '',
             priceOpen: "",
             bathsOpen: "",
-            bedsOpen: ""
+            bedsOpen: "",
+            minBeds: "",
+            minBaths: ""
         }
 
         this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -38,7 +40,6 @@ export default class FilterForm extends Component {
     handleClick(e) {
         e.preventDefault() 
         this.props.updateFilter('address', this.state.search)
-        //no need to rerender because the address will change and the maps component is subscribed to address slike of state
     }
 
     toggleDropdown(field) {
@@ -57,9 +58,10 @@ export default class FilterForm extends Component {
         }
     }
 
-    handleChange = (filter, updateFilter) => (e) => (
+    handleChange = (filter, updateFilter) => (e) => {
+        this.setState({ [filter]: parseInt(e.target.value) })
         updateFilter(filter, parseInt(e.target.value))
-    ); 
+    } 
 
     handleClear(e) {
         e.stopPropagation();
@@ -67,7 +69,9 @@ export default class FilterForm extends Component {
         this.setState({
             priceOpen: false,
             bathsOpen: false,
-            bedsOpen: false
+            bedsOpen: false,
+            minBeds: "",
+            minBaths: ""
         })
         this.props.removeFilters()
     }
@@ -87,13 +91,13 @@ export default class FilterForm extends Component {
                 <div className='price-filter-container'>
                     <button className='filter-btn' onClick={this.toggleDropdown('priceOpen')}>Price</button>
                     <div className={this.state.priceOpen ? "show-filter-price" : "hide-filter"}>
-                        <label className='home-input-field'>Minimum Price</label><br />
+                        <label className='home-input-field'>Min Price</label><br />
                         <input
                             onChange={this.handleChange('minPrice', updateFilter)}
                             className='filter-input'
                             type="number"
                             value={minPrice} /><br />
-                        <label className='home-input-field'>Maximum Price</label><br />
+                        <label className='home-input-field'>Max Price</label><br />
                         <input
                             onChange={this.handleChange('maxPrice', updateFilter)}
                             className='filter-input'
@@ -102,7 +106,7 @@ export default class FilterForm extends Component {
                     </div>
                 </div>
 
-                <button onClick={this.toggleDropdown('bedsOpen')} className='filter-btn'>Beds</button>
+                <button onClick={this.toggleDropdown('bedsOpen')} className='filter-btn'>{this.state.minBeds === "" ? 'Beds' : `${this.state.minBeds}+ bds`}</button>
                 <div className={this.state.bedsOpen ? 'show-filter-beds' : 'hide-filter'}>
                     <div className='filter-label'>Bedrooms</div>
                     <div className='filter-btn-container'>
@@ -116,7 +120,7 @@ export default class FilterForm extends Component {
 
 
 
-                <button onClick={this.toggleDropdown('bathsOpen')} className='filter-btn'>Baths</button>
+                <button onClick={this.toggleDropdown('bathsOpen')} className='filter-btn'>{this.state.minBaths === "" ? 'Beds' : `${this.state.minBaths}+ bas`}</button>
                 <div className={this.state.bathsOpen ? 'show-filter-baths' : 'hide-filter'}>
                     <div className='filter-label'>Bathrooms</div>
                     <div className='filter-btn-container'>

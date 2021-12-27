@@ -111,7 +111,7 @@ class PropertyForm extends React.Component {
                     <div className='address-input-container'>
                        
                         <div className='address-div'>
-                            <label className='home-input-field'>Address</label><br/>
+                            <label className='home-input-field-form'>Address</label><br/>
                             <input
                                 type="text"
                                 value={this.state.address}
@@ -123,7 +123,7 @@ class PropertyForm extends React.Component {
                         </div>
                         <div className='city-state-zip'>
                              <div className='city'>
-                                 <label className='home-input-field'>City</label><br/>
+                                 <label className='home-input-field-form'>City</label><br/>
                                  <input
                                      type="text"
                                      value={this.state.city}
@@ -135,7 +135,7 @@ class PropertyForm extends React.Component {
                              </div>
                              
                              <div className='state'>
-                                 <label className='home-input-field'>State</label><br/>
+                                 <label className='home-input-field-form'>State</label><br/>
                                  <input
                                      type="text"
                                      value={this.state.state}
@@ -146,7 +146,7 @@ class PropertyForm extends React.Component {
                              </div>
                              
                              <div className='zipcode'> 
-                                 <label className='home-input-field'>Zip Code</label><br/>
+                                 <label className='home-input-field-form'>Zip Code</label><br/>
                                  <input
                                      type="number"
                                      value={this.state.zipcode}
@@ -159,7 +159,7 @@ class PropertyForm extends React.Component {
 
                         <div className="lat-lng-container">
                             <div className='latitude'>
-                                <label className='home-input-field'>Latitude</label><br/>
+                                <label className='home-input-field-form'>Latitude</label><br/>
                                 <input
                                     type="number"
                                     value={this.state.latitude}
@@ -170,7 +170,7 @@ class PropertyForm extends React.Component {
                                 />
                             </div>
                             <div className='longitude'> 
-                                <label className='home-input-field'>Longitude</label><br/>
+                                <label className='home-input-field-form'>Longitude</label><br/>
                                 <input
                                     type="number"
                                     value={this.state.longitude}
@@ -204,7 +204,7 @@ class PropertyForm extends React.Component {
                     </div>
                     <div className='details-input'>
                         <div>
-                        <label className='home-input-field'>Bedrooms</label><br />
+                        <label className='home-input-field-form'>Bedrooms</label><br />
                         <input
                             type="number"
                             value={this.state.bedrooms}
@@ -214,7 +214,7 @@ class PropertyForm extends React.Component {
                         />
                         </div>
                         <div>
-                        <label className='home-input-field'>Bathrooms</label><br />
+                        <label className='home-input-field-form'>Bathrooms</label><br />
                         <input
                             type="number"
                             value={this.state.bathrooms}
@@ -225,7 +225,7 @@ class PropertyForm extends React.Component {
                         </div>
                         
                         <div>
-                        <label className='home-input-field'>Square Footage</label><br />
+                        <label className='home-input-field-form'>Square Footage</label><br />
                         <input
                             type="number"
                             value={this.state.sqft}
@@ -236,7 +236,7 @@ class PropertyForm extends React.Component {
                         </div>
                         
                         <div>
-                        <label className='home-input-field'>Price</label><br />
+                        <label className='home-input-field-form'>Price</label><br />
                         <input
                             type="number"
                             value={this.state.price}
@@ -249,7 +249,7 @@ class PropertyForm extends React.Component {
                     </div>
                     <div className='description-input'>
                         <div>
-                            <label className='home-input-field'>Description</label><br />
+                            <label className='home-input-field-form'>Description</label><br />
                             <textarea
                                 value={this.state.description}
                                 onChange={this.update('description')}

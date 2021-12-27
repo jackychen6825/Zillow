@@ -156,7 +156,8 @@
     width: 65px;
     font-family: 'Roboto';
     font-weight: 300;
-    border: 1px solid lightgrey;
+    border: 2px solid dodgerblue;
+    color: dodgerblue;
     border-radius: 3px;
     margin: 3px;
 }
@@ -168,6 +169,7 @@
 .filter-label {
     font-weight: bold;
     margin-right: 67%;
+    color: dodgerblue;
 }
 
 .search-bar-container-filter {

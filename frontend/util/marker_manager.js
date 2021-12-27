@@ -26,7 +26,7 @@ export default class MarkerManager {
         
         const contentString = 
         `<div className="info-window-container" style="display: flex; width: 170px; height: 60px;">
-            <div className="info-window-photo-container" style="width: 60%; height: 100%; margin-right: 5px">
+            <div className="info-window-photo-container" style="width: 60%; height: 100%; margin-right: 8px">
                 <img src="${property.photoURLs[0]}" className='info-window-photo' style="height: 100%; width: 100%;" />
             </div>
             <div className="property-info-container" style="display: flex; flex-wrap: wrap; width: 40%; height: 100%;">

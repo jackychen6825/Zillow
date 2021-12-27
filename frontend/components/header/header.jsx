@@ -9,7 +9,7 @@ const Header = ({ currentUser, logout, openModal }) => {
         <div className="header-container">
             <div className="header-left">
                 <Link to="/buy">Buy</Link>
-                <Link to="/buy">Rent</Link>
+                <Link to="/rental">Rent</Link>
                 <a onClick={() => openModal('login')}>Sell</a>
                 <Link to="/">Agent Finder</Link>
             </div>
@@ -30,7 +30,7 @@ const Header = ({ currentUser, logout, openModal }) => {
         <div className="header-container">
             <div className="header-left">
                 <Link to="/buy">Buy</Link>
-                <Link to="/buy">Rent</Link>
+                <Link to="/rental">Rent</Link>
                 <Link to="/properties/new">Sell</Link>
                 <Link to="/">Agent Finder</Link>
             </div>

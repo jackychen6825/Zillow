@@ -8,7 +8,7 @@ export const CLEAR_FILTERS = 'CLEAR_FILTERS'
 //     bounds: bounds
 // })
 
-const changeFilter = (filter, value) => ({
+export const changeFilter = (filter, value) => ({
     type: UPDATE_FILTER,
     filter: filter, 
     value: value

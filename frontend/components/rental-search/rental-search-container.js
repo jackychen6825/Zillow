@@ -1,15 +1,21 @@
-import React from "react";
-import MapContainer from '../map/map_container'
-import PropertyIndexContainer from "../properties/properties_index_container";
-import FilterForm from "../filters/filter_form";
+import { connect } from "react-redux";
+import RentalSearch from "./rental-search";
+import { updateFilter, removeFilters, changeFilter } from "../../actions/filter_actions";
+import { openModal } from "../../actions/modal_actions";
 
-const RentalSearch = ({ properties, updateFilter, removeFilters, minPrice, maxPrice, minBeds, minBaths, openModal }) => (
-    <div>
-        <FilterForm minPrice={minPrice} maxPrice={maxPrice} minBeds={minBeds} minBaths={minBaths} updateFilter={updateFilter} removeFilters={removeFilters}/>
-        <div className='index-container'>
-            <MapContainer updateFilter={updateFilter} properties={properties} openModal={openModal} />
-            <PropertyIndexContainer />
-        </div>
-    </div>
-)
-export default Search; 
+const mapSTP = ({ entities, ui }) => ({
+    properties: Object.values(entities.properties),
+    minPrice: ui.filters.minPrice,
+    maxPrice: ui.filters.maxPrice,
+    minBeds: ui.filters.minBeds,
+    minBaths: ui.filters.minBaths,
+})
+
+const mapDTP = dispatch => ({
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+    removeFilters: () => dispatch(removeFilters()),
+    openModal: (modal, property) => dispatch(openModal(modal, property)),
+    changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
+})
+
+export default connect(mapSTP, mapDTP)(RentalSearch);

@@ -6,6 +6,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import PropertyFormContainer from '../components/properties/property_form_container';
 import SavedContainer from './properties/saved_container';
 import SplashContainer from './splash/splash_container';
+import RentalSearchContainer from './rental-search/rental-search-container';
 
 const App = () => (
     <div>
@@ -17,6 +18,7 @@ const App = () => (
         <Switch>
             <Route exact path='/' component={SplashContainer} />
             <Route exact path='/buy' component={SearchContainer} />
+            <Route exact path='/rental' component={RentalSearchContainer} />
             <Route exact path='/saved' component={SavedContainer} />
             <Route exact path='/properties/new' component={PropertyFormContainer} />
         </Switch>

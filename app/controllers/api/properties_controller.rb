@@ -19,6 +19,14 @@ class Api::PropertiesController < ApplicationController
             properties = properties.where(id: params[:saved_ids]) 
         end 
 
+        if params[:searchType] === 'buy'
+            properties = properties.where(listing_type: "buy")
+        end 
+
+        if params[:searchType] === 'rental'
+            properties = properties.where(listing_type: "rental")
+        end 
+
         @properties = properties
         render :index 
     end

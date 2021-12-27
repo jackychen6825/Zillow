@@ -106,7 +106,7 @@ export default class FilterForm extends Component {
                     </div>
                 </div>
 
-                <button onClick={this.toggleDropdown('bedsOpen')} className='filter-btn'>{this.state.minBeds === "" ? 'Beds' : `${this.state.minBeds}+ bds`}</button>
+                <button onClick={this.toggleDropdown('bedsOpen')} className='filter-btn'>{this.state.minBeds === "" ? 'Beds' : `${this.state.minBeds}+ beds`}</button>
                 <div className={this.state.bedsOpen ? 'show-filter-beds' : 'hide-filter'}>
                     <div className='filter-label'>Bedrooms</div>
                     <div className='filter-btn-container'>
@@ -120,7 +120,7 @@ export default class FilterForm extends Component {
 
 
 
-                <button onClick={this.toggleDropdown('bathsOpen')} className='filter-btn'>{this.state.minBaths === "" ? 'Beds' : `${this.state.minBaths}+ bas`}</button>
+                <button onClick={this.toggleDropdown('bathsOpen')} className='filter-btn'>{this.state.minBaths === "" ? 'Baths' : `${this.state.minBaths}+ baths`}</button>
                 <div className={this.state.bathsOpen ? 'show-filter-baths' : 'hide-filter'}>
                     <div className='filter-label'>Bathrooms</div>
                     <div className='filter-btn-container'>

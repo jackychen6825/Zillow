@@ -1,4 +1,3 @@
-
 export default class MarkerManager {
     constructor(map, handleClick){
         this.map = map; 
@@ -6,7 +5,7 @@ export default class MarkerManager {
         this.handleClick = handleClick; 
     }
 
-    updateMarkers(properties){
+    updateMarkers(properties) {
         //converting properties arr into property object for constant look up time: 
         let propertyObj = {}; 
         properties.forEach(property => propertyObj[property.id] = property);
@@ -20,19 +19,46 @@ export default class MarkerManager {
         Object.keys(this.markers) //[1,2,3,...]
             .filter(propertyId => !propertyObj[propertyId])
             .forEach(propertyId => this.removeMarker(this.markers[propertyId])) //takes in the markers object as the argument need to make the helper method
-
     }
 
     createMarkerFromProperty(property){
         const position = new google.maps.LatLng(property.latitude, property.longitude); //make a new instance of google maps longitude and latitude class
         
+        const contentString = 
+        `<div className="info-window-container" style="display: flex; width: 170px; height: 60px;">
+            <div className="info-window-photo-container" style="width: 60%; height: 100%; margin-right: 5px">
+                <img src="${property.photoURLs[0]}" className='info-window-photo' style="height: 100%; width: 100%;" />
+            </div>
+            <div className="property-info-container" style="display: flex; flex-wrap: wrap; width: 40%; height: 100%;">
+                <div className="price-info-window" style="font-weight: 500; width: 100%; height: 33%;"> $${property.price.toLocaleString('en')} </div>
+                <div className="gen-info-window" style="width: 100%; height: 33%;"> ${property.bedrooms} bd ${property.bathrooms} ba </div>
+                <div className="gen-info-window" style="width: 100%; height: 33%;"> ${property.sqft} sqft</div>
+            </div>
+        </div>`
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: contentString
+        })
+
         const marker = new google.maps.Marker({
             position: position,
             map: this.map, 
-            propertyId: property.id 
+            propertyId: property.id,
+            infoWindow
         });
 
         marker.addListener('click', () => this.handleClick(property)); //open modal when user clicks on marker 
+        marker.addListener('mouseover', () => {
+            infoWindow.open({
+                anchor: marker,
+                map: this.map,
+                shouldFocus: false
+            })
+        })
+        marker.addListener('mouseout', () => {
+            infoWindow.close()
+        })
+
         this.markers[marker.propertyId] = marker;
 
     }

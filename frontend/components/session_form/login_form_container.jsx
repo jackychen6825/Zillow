@@ -14,7 +14,7 @@ const mapDTP = (dispatch) => ({
     processForm: user => dispatch(login(user)),
     otherForm: (
         <a className='other-form' onClick={() => dispatch(openModal('signup')) }>
-            New Account
+            New account
         </a>
     ),
     closeModal: () => dispatch(closeModal()),

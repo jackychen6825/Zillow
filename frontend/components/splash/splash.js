@@ -7,10 +7,11 @@ export default class Splash extends Component {
             search: ''
         }
 
-        this.onPlaceChanged = this.onPlaceChanged.bind(this),
-        this.navigatetoSearch = this.navigatetoSearch.bind(this),
-        this.handleClick = this.handleClick.bind(this),
+        this.onPlaceChanged = this.onPlaceChanged.bind(this)
+        this.navigatetoSearch = this.navigatetoSearch.bind(this)
+        this.handleClick = this.handleClick.bind(this)
         this.navigateToSell =  this.navigateToSell.bind(this)
+        this.navigateToRent = this.navigateToRent.bind(this)
     }
 
     componentDidMount() {
@@ -36,6 +37,10 @@ export default class Splash extends Component {
         this.props.history.push('/buy')
     }
 
+    navigateToRent() {
+        this.props.history.push('/rental')
+    }
+
     navigateToSell()  {
         this.props.history.push('/properties/new')
     }
@@ -49,6 +54,8 @@ export default class Splash extends Component {
     
 
     render() {
+        const { currentUser, openModal } = this.props; 
+
         return (
             <div className="splash-container">
                 <div className="splash-image-container">
@@ -76,13 +83,13 @@ export default class Splash extends Component {
                         <p className="lower-splash-nav-text">Find your place with an immersive photo experience and the most listings, including things you won't find anywhere else</p>
                         <button className="splash-nav-btn">Search homes</button>
                     </div>
-                    <div onClick={this.navigatetoSearch} className="splash-nav">
+                    <div onClick={currentUser ? this.navigateToSell : () => openModal('login')} className="splash-nav">
                         <img src="https://lh3.googleusercontent.com/qDlNY7qw_uX2k2b62fKEBIl05nAlBH0RcPfvH-8zO6Cs22ZOaTJVZM20-bC2Tjz8DRFBxBZIulDbKo4f9RRgP7KYVFNPmqgu2iNUA0h09NS4rH9gJVpZ-i87Ar73eUayljNbAswgjg=w2400" alt="" />
                         <p className="upper-splash-nav-text">Sell a home</p>
                         <p className="lower-splash-nav-text">No matter what path you take to sell your home, we can help you navigate a successful path</p>
                         <button className="splash-nav-btn">See your options</button>
                     </div>
-                    <div  onClick={this.navigateToSell} className="splash-nav">
+                    <div  onClick={this.navigateToRent} className="splash-nav">
                     <img src="https://lh3.googleusercontent.com/j93MTB6JlB33emFmEqUKmrvLwWJv_M_qpvrgvqvN0ziczKJbO2J_vfKAScVv4LO1EegKzqpuJXy-GWqBndNUKDf-9K_NapMfJhPTnmgu81N6YRMbrvG4Q2reqc_-KXbv3nSLdamibQ=w2400" alt="" />
                         <p className="upper-splash-nav-text">Rent a home</p>
                         <p className="lower-splash-nav-text">We're creating seamless online experiences from shopping on the largest rental network, to applying and paying rent</p>

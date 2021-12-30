@@ -56,26 +56,26 @@ class SessionForm extends React.Component{
             <div className='session-form-container'>
                 <form onSubmit={this.handleSubmit} className='session-form-box'>
                     
-                    <p className='session-intro'>Welcome to Millow <i className="fas fa-home"></i></p>
+                    <p className='session-intro'>Welcome to Millow</p>
 
-                    <p className='session-option-container'><span className='current-option'>{this.props.formType === 'login' ? 'Login' : 'Signup'}</span> <span>{this.props.otherForm}</span></p>
+                    <p className='session-option-container'><span className='current-option'>{this.props.formType === 'login' ? 'Sign in' : 'Sign up'}</span> <span>{this.props.otherForm}</span></p>
                     <div onClick={this.props.closeModal} className='close-x'>X</div>
                     {this.renderErrors()}
                     <div className='session-form'>
                         <br/>
-                        <span className='input-labels'>Email</span>
+                        <span className='session-input-labels'>Email</span>
 
                     <input type="text" value={this.state.email} onChange={this.update('email')} className='session-input' placeholder='Enter email' />
                      
                         <br/>
-                        <span className='input-labels'>Password</span>
+                        <span className='session-input-labels'>Password</span>
 
                     <input type="password" value={this.state.password} onChange={this.update('password')} className='session-input' placeholder='Enter password' />
                        
                         <br/>
-                        <input type="submit" className='session-submit' value={this.props.formType === 'login' ? 'Login' : 'Signup'} />
-                        <br/>
-                        <input type="submit" className='session-submit-guest' value='Guest Login' onClick={this.guestLogin}/>
+                        <input type="submit" className='session-submit' value={this.props.formType === 'login' ? 'Sign in' : 'Sign up'} />
+                        <p className="sign-in-filler">or sign in with</p>
+                        <input type="submit" className='session-submit-guest' value='Demo' onClick={this.guestLogin}/>
                     </div>
 
                 </form>

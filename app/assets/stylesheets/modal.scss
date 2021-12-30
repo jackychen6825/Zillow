@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;500&family=Montserrat:wght@100;200;300;400&family=Outfit:wght@100;200;300&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Merriweather&family=Open+Sans:wght@300&family=Playfair+Display&family=Roboto:wght@300;500&display=swap');
 
 .session-form-container {
    display: flex;
@@ -15,19 +16,21 @@
 
  .session-form-box a:hover {
     color: dodgerblue;
-    border-bottom: 2px solid dodgerblue;
+    // border-bottom: 2px solid dodgerblue;
 
  }
 
  .session-intro{
-   font-size: 30px;
-   font-family: 'Times New Roman', Times, serif;
-   font-weight: 400;
-   margin-bottom: 5px;
+    font-size: 25px;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 25px;
+    margin-left: 20%;
+    font-weight: 400;
+    margin-top: 25px;
  }
 
  .session-input {
-  width: 90%;
+  width: 93%;
   height: 50px;
   margin-top: 5px;
   margin-left: 10px;
@@ -35,16 +38,17 @@
   background-color: rgba(245, 244, 244, 0.948);
   border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 0px 6px;
+  /* padding: 0px 6px; */
   color: black;
   font-family: 'roboto', sans-serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 16px;
+  padding-left: 8px;
  }
 
  .session-form-box {
    border: 1px solid lightgray;
-    border-radius: 12px;
+    border-radius: 9px;
     padding: 20px;
     background: white;
     /* position: relative; */
@@ -74,8 +78,8 @@
 
  .session-submit {
     height: 50px;
-    background-color: dodgerblue;
-    border: 1px dodgerblue solid;
+    background-color: cornflowerblue;
+    border: 1px cornflowerblue solid;
     border-radius: 4px;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -85,10 +89,15 @@
     margin-left: 2.5%;
  }
 
+ .session-submit:hover {
+   background-color: rgb(51, 51, 255);
+   border: 1px solid rgb(51, 51, 255);
+ }
+
  .session-submit-guest {
     height: 50px;
-    background-color: black;
-    border: 1px black solid;
+    background-color: rgb(179, 179, 255);
+    border: 1px rgb(179, 179, 255) solid;
     border-radius: 4px;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -96,6 +105,11 @@
     font-size: 20px;
     width: 93%;
     margin-left: 2.5%;
+ }
+
+ .session-submit-guest:hover {
+   background-color: rgb(128, 128, 255);
+   border: 1px solid rgb(128, 128, 255);
  }
  
 .modal-background {
@@ -142,10 +156,12 @@
 }
 
  .close-x {
-   position: absolute;
-   top: 15px;
-   right: 15px;
-   cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat';
+  font-weight: bold;
  }
 
  .session-option-container {
@@ -153,8 +169,13 @@
  }
 
  .current-option {
-   border-bottom: 2px solid dodgerblue;
+   border-bottom: 3px solid dodgerblue;
    margin-right: 10px;
+   font-family: 'Outfit';
+ }
+
+ .other-form {
+   font-family: 'Outfit';
  }
 
  .fas.fa-home {
@@ -298,4 +319,19 @@
     padding: 0px 10px 10px 10px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
+}
+
+.session-input-labels {
+  margin-left: 12px;
+  margin-bottom: 3px;
+  font-family: 'Outfit';
+  font-size: 17px;
+}
+
+.sign-in-filler {
+    font-family: 'Playfair Display';
+    font-size: 16px;
+    margin-left: 35%;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }

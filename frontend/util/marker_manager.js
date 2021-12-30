@@ -44,7 +44,9 @@ export default class MarkerManager {
             position: position,
             map: this.map, 
             propertyId: property.id,
-            infoWindow
+            infoWindow,
+            animation: google.maps.Animation.DROP, //makes the markers drop on the map
+            icon: 'http://maps.google.com/mapfiles/kml/pal2/icon10.png', //changing the icon of marker 
         });
 
         marker.addListener('click', () => this.handleClick(property)); //open modal when user clicks on marker 

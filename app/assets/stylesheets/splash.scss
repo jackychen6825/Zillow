@@ -93,10 +93,14 @@
     font-size: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.splash-nav-text p  {
+.splash-nav-text div  {
+    width: 100%;
     font-size: 25px;
+    display: flex;
+    justify-content: center;
     font-family: 'Playfair Display', serif;
 }
 

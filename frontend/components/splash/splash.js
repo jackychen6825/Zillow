@@ -75,7 +75,8 @@ export default class Splash extends Component {
 
                 <div className="splash-nav-container">
                     <div className="splash-nav-text">
-                        <p>Whether you’re buying, selling or renting,<br/> we can help you move forward.</p> 
+                        <div>Whether you’re buying, selling or renting,</div> 
+                        <div>we can help you move forward.</div> 
                     </div>
                     <div onClick={this.navigatetoSearch} className="splash-nav">
                         <img src="https://lh3.googleusercontent.com/VVCVW9QmGBkBLymMHY3v0Khv4gxB9jyrRVIwDud8qPedU4nINdmSa5Rwvng24g3Sr7PI9L-5KrB8l-3Tkj_nw6zcbdBVFNY5_MD8xbjj8ixZqVzd2hSLAEfARnHHDFyaDgf4FH1mng=w2400" alt="" />

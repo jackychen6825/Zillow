@@ -8,11 +8,11 @@ export default function filterReducer(state = defaultState, action) {
 
     switch (action.type) {
         case UPDATE_FILTER:
-            //key into filter and update it 
             nextState[action.filter] = action.value
             return nextState;  
         case CLEAR_FILTERS:
-            return defaultState;
+            return Object.assign({}, defaultState, { searchType: action.remainingFilter })
+            // return defaultState;
         default:
             return state;
     }

@@ -16,7 +16,7 @@ export default class RentalSearch extends Component {
         const { properties, updateFilter, removeFilters, minPrice, maxPrice, minBeds, minBaths, openModal } = this.props;
         return (
             <div>
-                <FilterForm minPrice={minPrice} maxPrice={maxPrice} minBeds={minBeds} minBaths={minBaths} updateFilter={updateFilter} removeFilters={removeFilters}/>
+                <FilterForm searchType={'rental'} minPrice={minPrice} maxPrice={maxPrice} minBeds={minBeds} minBaths={minBaths} updateFilter={updateFilter} removeFilters={removeFilters}/>
                 <div className='index-container'>
                     <MapContainer updateFilter={updateFilter} properties={properties} openModal={openModal} />
                     <PropertyIndexContainer />

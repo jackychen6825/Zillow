@@ -73,7 +73,8 @@ export default class FilterForm extends Component {
             minBeds: "",
             minBaths: ""
         })
-        this.props.removeFilters()
+        debugger
+        this.props.removeFilters(this.props.searchType)
     }
 
     render() {

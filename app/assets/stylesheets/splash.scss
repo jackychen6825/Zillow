@@ -79,7 +79,7 @@
     position: absolute;
     top: 105%;
     height: 70vh;
-    width: 100vw;
+    width: 99vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -118,7 +118,8 @@
     padding: 25px;
     margin: 15px;
     box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
-    transition: box-shadow 1s, width 1s, height 1s;
+    transition: box-shadow 0.5s, width 0.5s, height 0.5s;
+    cursor: pointer;
 }
 
 .splash-nav:hover {
@@ -134,4 +135,5 @@
     font-size: 18px;
     font-weight: 400;
     padding: 10px;
+    cursor: pointer;
 }

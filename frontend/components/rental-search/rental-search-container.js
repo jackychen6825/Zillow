@@ -13,7 +13,7 @@ const mapSTP = ({ entities, ui }) => ({
 
 const mapDTP = dispatch => ({
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
-    removeFilters: () => dispatch(removeFilters()),
+    removeFilters: (remainingFilter) => dispatch(removeFilters(remainingFilter)),
     openModal: (modal, property) => dispatch(openModal(modal, property)),
     changeFilter: (filter, value) => dispatch(changeFilter(filter, value))
 })

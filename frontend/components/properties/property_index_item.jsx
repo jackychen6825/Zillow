@@ -29,10 +29,10 @@ class PropertyIndexItem extends React.Component {
     }
 
     render(){
-        const { property, openModal, saved } = this.props;
+        const { property, openModal, saved, receiveCurrentProperty } = this.props;
         
         return (
-            <div className={saved ? 'property-item-saved' : 'property-item'}>
+            <div onMouseEnter={() => receiveCurrentProperty(property)} className={saved ? 'property-item-saved' : 'property-item'}>
                 <img onClick={() => openModal('show', property)} className='example-image' src={property.photoURLs[0]} alt="" />
                 <div className='property-text-box'> 
                     <p className='price'>${property.price.toLocaleString('en')}</p>

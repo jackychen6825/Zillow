@@ -65,6 +65,10 @@ class Map extends React.Component {
         if (this.MarkerManager) {
             this.MarkerManager.updateMarkers(this.props.properties)
         }
+
+        if (this.MarkerManager && prevProps.currentProperty !== this.props.currentProperty) {
+            this.MarkerManager.changeMarkerColorFromPropertyId(this.props.currentProperty)
+        }
     }
 
     handleMarkerClick(property){

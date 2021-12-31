@@ -3,7 +3,8 @@ import Map from "./map";
 
 const mSTP = state => ({
     filters: state.ui.filters,
-    address: state.ui.filters.address
+    address: state.ui.filters.address,
+    currentProperty: state.ui.currentProperty,
 })
 
 const mDTP = dispatch => ({

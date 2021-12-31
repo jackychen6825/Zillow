@@ -3,6 +3,7 @@ export default class MarkerManager {
         this.map = map; 
         this.markers = {}; 
         this.handleClick = handleClick; 
+        this.changeMarkerColorFromPropertyId = this.changeMarkerColorFromPropertyId.bind(this);
     }
 
     updateMarkers(properties) {
@@ -15,11 +16,13 @@ export default class MarkerManager {
             .filter(property => !this.markers[property.id]) 
             .forEach(property => this.createMarkerFromProperty(property))  
 
+
         //removing markers for properties not in our property obj
         Object.keys(this.markers) //[1,2,3,...]
             .filter(propertyId => !propertyObj[propertyId])
             .forEach(propertyId => this.removeMarker(this.markers[propertyId])) //takes in the markers object as the argument need to make the helper method
     }
+
 
     createMarkerFromProperty(property){
         const position = new google.maps.LatLng(property.latitude, property.longitude); //make a new instance of google maps longitude and latitude class
@@ -45,8 +48,7 @@ export default class MarkerManager {
             map: this.map, 
             propertyId: property.id,
             infoWindow,
-            animation: google.maps.Animation.DROP, //makes the markers drop on the map
-            icon: 'http://maps.google.com/mapfiles/kml/pal2/icon10.png', //changing the icon of marker 
+            animation: google.maps.Animation.DROP, 
         });
 
         marker.addListener('click', () => this.handleClick(property)); //open modal when user clicks on marker 
@@ -62,7 +64,20 @@ export default class MarkerManager {
         })
 
         this.markers[marker.propertyId] = marker;
+    }
 
+    
+
+    //update specific marker 
+    changeMarkerColorFromPropertyId(propertyId) {
+        //access the right marker
+        const associatedMarker = this.markers[propertyId];
+        //change all the icons to the original icon 
+        for (const markerId in this.markers) { //iterating through an object
+            this.markers[markerId].setIcon('http://maps.google.com/mapfiles/kml/paddle/red-circle.png')
+        }
+        //change the icon associated with the marker that is currently being hovered over
+        associatedMarker.setIcon('http://maps.google.com/mapfiles/kml/paddle/purple-circle.png') //want to set it to a purple marker icon 
     }
 
     removeMarker(marker){

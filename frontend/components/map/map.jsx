@@ -66,8 +66,14 @@ class Map extends React.Component {
             this.MarkerManager.updateMarkers(this.props.properties)
         }
 
-        if (this.MarkerManager && prevProps.currentProperty !== this.props.currentProperty) {
+        //if there is a marker manager and the current property has changed and the current property isnt empty change the associated marker
+        if (this.MarkerManager && prevProps.currentProperty !== this.props.currentProperty && this.props.currentProperty !== "") {
             this.MarkerManager.changeMarkerColorFromPropertyId(this.props.currentProperty)
+        }
+
+        //if there is a marker manager and the current property has changed and the current property is empty (something to nothing)
+        if (this.MarkerManager && prevProps.currentProperty !== this.props.currentProperty && this.props.currentProperty === "") {
+            this.MarkerManager.changeMarkersBack()
         }
     }
 

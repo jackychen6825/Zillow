@@ -98,6 +98,7 @@ class PropertyForm extends React.Component {
     render(){
         return (
             <div className='property-form-container'>
+                <img className="property-form-background" src="https://images.unsplash.com/photo-1502921451607-29fa99d270d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
                 <form onSubmit={this.handleSubmit} className='property-form'>
                     <div className='photos-input'>
                         <div className='files-input-container'>

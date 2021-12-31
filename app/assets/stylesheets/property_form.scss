@@ -5,7 +5,18 @@
     font-weight: 300;
     font-size: 22px;
     height: 600px;
-    margin-left: 15px;
+    // margin-left: 15px;
+    position: relative;
+}
+
+.property-form-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -10;
+    height: 94vh;
+    width: 100vw;
+
 }
 
 .property-form {
@@ -13,6 +24,7 @@
     flex-wrap: wrap;
     justify-content: start;
     height: 100%;
+    margin-left: 20px;
 }
 
 .photo-label {
@@ -47,29 +59,33 @@
 }
 .home-input-field-form {
     margin-left: 7px;
+    font-family: "Outfit";
+    font-size: 20px;
 }
 
 .address-input {
     width: 1110px;
     height: 40px;
-    border-radius: 12px;
-    border-width: 1px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
     font-family: 'Outfit';
     background-color: white;
-    padding-left: 7px;
-    font-size: 20px;
+    padding-left: 10px;
+    font-size: 16px;
     color: black;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
 }
 
 .property-input {
     width: 350px;
     height: 40px;
-    border-radius: 12px;
-    border-width: 1px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
     font-family: 'Outfit';
     background-color: white;
-    padding-left: 7px;
-    font-size: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
 }
 
 .lat-lng-container {
@@ -101,6 +117,8 @@
     font-family: 'Montserrat';
     padding: 10px;
     font-size: 14px;
+    background-color: white;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
 }
 
 .listing-type {
@@ -119,12 +137,12 @@ input[type="radio" i] {
 }
 
 .label-rental {
-    border: 2px solid darkblue;
+    border: 2px solid rgb(179, 179, 255);
     border-radius: 5px;
     width: 140px;
     height: 50px;
     color: white;
-    background-color: darkblue;
+    background-color: rgb(179, 179, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,12 +150,12 @@ input[type="radio" i] {
 }
 
 .label-sale {
-    border: 2px solid darkblue;
+    border: 2px solid rgb(179, 179, 255);
     border-radius: 5px;
     width: 140px;
     height: 50px;
     color: white;
-    background-color: darkblue;
+    background-color: rgb(179, 179, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,7 +171,6 @@ input[type="radio" i] {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .create-submit {
@@ -167,6 +184,7 @@ input[type="radio" i] {
     font-family: 'Outfit';
     margin-left: 20px;
     font-size: 18px;
+    box-shadow: -1px 4px 6px 1px rgba(121, 117, 117, 0.5); 
 }
 
 .files-input {
@@ -179,7 +197,7 @@ input[type="radio" i] {
     width: 240px;
     height: 120px;
     border: 1px solid dodgerblue;
-    border-radius: 10px;
+    border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,12 +210,12 @@ i {
     margin-right: 5px;
 }
 
-.label:hover {
-    // border: 2px solid rgba($color: #3a10d1, $alpha: 1.0);
-    background-color: rgba($color: #0731a7, $alpha: 1.0);
-    border: 1px solid rgba($color: #0731a7, $alpha: 1.0);
+// .label:hover {
+//     // border: 2px solid rgba($color: #3a10d1, $alpha: 1.0);
+//     background-color: rgba($color: #0731a7, $alpha: 1.0);
+//     border: 1px solid rgba($color: #0731a7, $alpha: 1.0);
 
-}
+// }
 
 .create-submit:hover {
     background-color: rgba($color: #0731a7, $alpha: 1.0);

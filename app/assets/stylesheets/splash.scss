@@ -66,7 +66,7 @@
 .splash-text-container {
     position: absolute;
     top: 22%;
-    right: 43%;
+    right: 38vw;
 }
 
 .splash-text {
@@ -132,8 +132,8 @@
 }
 
 .splash-nav:hover .splash-nav-btn {
-    border: 1px solid rgb(51, 51, 255);
-    background-color: rgb(51, 51, 255);
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
     color: white;
 }
 
@@ -147,8 +147,10 @@
     font-weight: 400;
     padding: 10px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .lower-splash-nav-text {
     text-align: center;
+    font-family: "Outfit";
 }

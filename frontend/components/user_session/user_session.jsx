@@ -26,7 +26,7 @@ class UserSession extends Component {
         return (
             <div className="user-session-container">
                 <div className="user-dropdown-btn" onClick={this.toggleDropdown}>
-                    <i className="fas fa-house-user fa-2x"></i>
+                    <i className="fas fa-user-circle fa-2x"></i>
                 </div>
 
                 <div className={this.state.dropdownOpen ? `user-dropdown-container`: 'hide'}>

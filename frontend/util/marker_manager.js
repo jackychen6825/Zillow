@@ -49,6 +49,7 @@ export default class MarkerManager {
             propertyId: property.id,
             infoWindow,
             animation: google.maps.Animation.DROP, 
+            icon: 'https://lh3.googleusercontent.com/2Z8Z3x__hX_9f66a5gHwRatdC9LsPsdRLVqW4nm9BgDtWQOrc-B4TpNL82XBtxOCvg_nfq3sEUBZmoU3DZXoi-q6R79a3WqEN4CV7jHDir1gojXouAze0axsuQhzdt6a62tpTTJnIA=s48-p-k'
         });
 
         marker.addListener('click', () => this.handleClick(property)); //open modal when user clicks on marker 
@@ -66,18 +67,24 @@ export default class MarkerManager {
         this.markers[marker.propertyId] = marker;
     }
 
-    
+    //change the color of all the marekrs to red - reset to default 
+    changeMarkersBack() {
+        for (const markerId in this.markers) { //iterating through an object
+            this.markers[markerId].setIcon('https://lh3.googleusercontent.com/2Z8Z3x__hX_9f66a5gHwRatdC9LsPsdRLVqW4nm9BgDtWQOrc-B4TpNL82XBtxOCvg_nfq3sEUBZmoU3DZXoi-q6R79a3WqEN4CV7jHDir1gojXouAze0axsuQhzdt6a62tpTTJnIA=s48-p-k')
+            this.markers[markerId].setAnimation(null)
+        }
 
+    }
+
+    
     //update specific marker 
     changeMarkerColorFromPropertyId(propertyId) {
         //access the right marker
         const associatedMarker = this.markers[propertyId];
-        //change all the icons to the original icon 
-        for (const markerId in this.markers) { //iterating through an object
-            this.markers[markerId].setIcon('http://maps.google.com/mapfiles/kml/paddle/red-circle.png')
-        }
         //change the icon associated with the marker that is currently being hovered over
-        associatedMarker.setIcon('http://maps.google.com/mapfiles/kml/paddle/purple-circle.png') //want to set it to a purple marker icon 
+        associatedMarker.setIcon('https://lh3.googleusercontent.com/iGy8H-cxKfcjLu-mSvsBL81MSA3xsJXypekjzuIcyMoSa_gsLt8VlCzhHX4GO244ffjW6qlzKx4v8JTwfDKpQTgwjTT_rgynkZe_lPe0JwL9n8fBwaotq6gv6F0kUuLkAJxgsmhBRw=s48-p-k') //want to set it to a purple marker icon 
+        //make the marker bounce 
+        associatedMarker.setAnimation(google.maps.Animation.BOUNCE)
     }
 
     removeMarker(marker){

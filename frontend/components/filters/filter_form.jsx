@@ -16,6 +16,7 @@ export default class FilterForm extends Component {
         this.handleClear = this.handleClear.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.onPlaceChanged = this.onPlaceChanged.bind(this);
+        this.handlePriceClick = this.handlePriceClick.bind(this);
     }
 
     componentDidMount() {
@@ -58,9 +59,20 @@ export default class FilterForm extends Component {
         }
     }
 
+    //grab the specific filter and the update filter function - however needs an event 
     handleChange = (filter, updateFilter) => (e) => {
+        //for displaying value on the input
         this.setState({ [filter]: parseInt(e.target.value) })
+        //change the filter on the filter slice of state and fetch properties with new filters 
         updateFilter(filter, parseInt(e.target.value))
+    } 
+
+    //same exact thing as handleChange above but does not parse int becuase you cannot parse int an integer 
+    handlePriceClick = (filter, updateFilter) => (e) => {
+        //for displaying value on the input
+        this.setState({ [filter]: e.target.value })
+        //change the filter on the filter slice of state and fetch properties with new filters 
+        updateFilter(filter, e.target.value)
     } 
 
     handleClear(e) {
@@ -73,7 +85,6 @@ export default class FilterForm extends Component {
             minBeds: "",
             minBaths: ""
         })
-        debugger
         this.props.removeFilters(this.props.searchType)
     }
 
@@ -92,18 +103,37 @@ export default class FilterForm extends Component {
                 <div className='price-filter-container'>
                     <button className='filter-btn' onClick={this.toggleDropdown('priceOpen')}>Price</button>
                     <div className={this.state.priceOpen ? "show-filter-price" : "hide-filter"}>
-                        <label className='home-input-field'>Min Price</label><br />
-                        <input
-                            onChange={this.handleChange('minPrice', updateFilter)}
-                            className='filter-input'
-                            type="number"
-                            value={minPrice} /><br />
-                        <label className='home-input-field'>Max Price</label><br />
-                        <input
-                            onChange={this.handleChange('maxPrice', updateFilter)}
-                            className='filter-input'
-                            type="number"
-                            value={maxPrice} />
+                        <div className="price-filter-inputs-container">
+                            <input
+                                onChange={this.handleChange('minPrice', updateFilter)}
+                                className='filter-input-price'
+                                type="number"
+                                placeholder='Min'
+                                value={minPrice} />
+                            <div className="price-filter-sep"> - </div>
+                            <input
+                                onChange={this.handleChange('maxPrice', updateFilter)}
+                                className='filter-input-price'
+                                type="number"
+                                placeholder='Max'
+                                value={maxPrice} />
+                        </div>
+                        <div className="price-filter-buttons-container-min">
+                            <button onClick={this.handlePriceClick('minPrice', updateFilter)} value={0} className="price-filter-btns">0+</button>
+                            <button onClick={this.handlePriceClick('minPrice', updateFilter)} value={100000} className="price-filter-btns">$100,000+</button>
+                            <button onClick={this.handlePriceClick('minPrice', updateFilter)} value={200000} className="price-filter-btns">$200,000+</button>
+                            <button onClick={this.handlePriceClick('minPrice', updateFilter)} value={300000} className="price-filter-btns">$300,000+</button>
+                            <button onClick={this.handlePriceClick('minPrice', updateFilter)} value={400000} className="price-filter-btns">$400,000+</button>
+                            <button onClick={this.handlePriceClick('minPrice', updateFilter)} value={500000} className="price-filter-btns">$500,000+</button>
+                        </div>
+                        <div className="price-filter-buttons-container-max">
+                            <button onClick={this.handlePriceClick('maxPrice', updateFilter)} value={1000000} className="price-filter-btns">$1,000,000+</button>
+                            <button onClick={this.handlePriceClick('maxPrice', updateFilter)} value={2000000} className="price-filter-btns">$2,000,000+</button>
+                            <button onClick={this.handlePriceClick('maxPrice', updateFilter)} value={3000000} className="price-filter-btns">$3,000,000+</button>
+                            <button onClick={this.handlePriceClick('maxPrice', updateFilter)} value={4000000} className="price-filter-btns">$4,000,000+</button>
+                            <button onClick={this.handlePriceClick('maxPrice', updateFilter)} value={5000000} className="price-filter-btns">$5,000,000+</button>
+                            <button onClick={this.handlePriceClick('maxPrice', updateFilter)} value={6000000} className="price-filter-btns">$6,000,000+</button>
+                        </div>
                     </div>
                 </div>
 

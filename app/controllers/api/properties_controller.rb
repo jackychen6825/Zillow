@@ -3,7 +3,10 @@ class Api::PropertiesController < ApplicationController
     def index
         properties = bounds ? Property.in_bounds(bounds) : Property.all
 
-        if params[:minPrice] && params[:maxPrice]
+        #if both minPrice and maxPrice do not equal an empty string, create a range from them 
+        #use the range to fetch only properties with prices within that range
+        #there will always be a params[:minPrice] and params[:maxPrice] since those two keys will always be in the filter slice of state
+        if params[:minPrice] != "" && params[:maxPrice] != ""
             properties = properties.where(price: price_range)
         end 
 

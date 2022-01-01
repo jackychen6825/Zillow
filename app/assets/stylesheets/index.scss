@@ -123,6 +123,23 @@
     margin-left: 10px;
 }
 
+.filter-input-price {
+    height: 40px;
+    background: white;
+    background-color: white;
+    border: 2px solid dodgerblue;
+    border-radius: 3px;
+    padding: 0px 10px;
+    width: 44%;
+    font-family: Outfit;
+    font-size: 15px;
+}
+
+.price-filter-sep {
+    margin: 10px 10px 15px 10px;
+    font-size: 40px;
+}
+
 .save-btn {
     z-index: 50;
 }

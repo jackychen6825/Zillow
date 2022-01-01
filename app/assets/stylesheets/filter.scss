@@ -98,7 +98,7 @@
     align-items: center;
     top: 133px;
     width: 350px;
-    height: 100px;
+    height: 300px;
     padding: 10px;
     background-color: white;
     color: black;
@@ -210,4 +210,63 @@
 
 .fas.fa-search {
     color: dodgerblue;
+}
+
+.price-filter-inputs-container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-filter-buttons-container-min {
+    width: 50%;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.price-filter-buttons-container-min button {
+    width: 88%;
+    height: 15%;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    font-family: Outfit;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.price-filter-buttons-container-min button:hover {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: white;
+}
+
+.price-filter-buttons-container-max button:hover {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    color: white;
+}
+
+
+.price-filter-buttons-container-max button {
+    width: 88%;
+    height: 15%;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    font-family: Outfit;
+    font-size: 13px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.price-filter-buttons-container-max {
+    width: 50%;
+    height: 75%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }

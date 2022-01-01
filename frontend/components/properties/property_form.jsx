@@ -1,4 +1,5 @@
 import React from 'react'
+import FormMiniMap from '../map/form_mini_map';
 
 class PropertyForm extends React.Component {
     constructor(props){
@@ -23,6 +24,19 @@ class PropertyForm extends React.Component {
         this.navigatetoSearch = this.navigatetoSearch.bind(this); 
         this.handleSale = this.handleSale.bind(this);
         this.handleRent = this.handleRent.bind(this);
+    }
+
+    //when the user presses a spot on the map:
+    componentDidUpdate(prevProps) {
+        const { lat, lng }  = this.props;
+        //if the props changed (i.e. lat or lng or both changed and both lat and lng are not empty then...)
+        if (this.props !== prevProps && lat !== '' && lng !== '') {
+            //set the state to the lat lng the user clicked on
+            this.setState({
+                latitude: lat,
+                longitude: lng
+            })
+        }
     }
 
     update(field) {
@@ -260,9 +274,8 @@ class PropertyForm extends React.Component {
                         </div>
                     </div>
                     <input className='create-submit' type="submit" value='Post Home' />
-
-                    
                 </form>
+                <FormMiniMap />
             </div>
 
         )

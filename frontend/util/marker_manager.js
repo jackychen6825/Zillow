@@ -23,6 +23,28 @@ export default class MarkerManager {
             .forEach(propertyId => this.removeMarker(this.markers[propertyId])) //takes in the markers object as the argument need to make the helper method
     }
 
+    //for the property form page 
+    createMarkerFromLatLngObj(latLngObj) {
+        const position = new google.maps.LatLng(latLngObj.lat, latLngObj.lng)
+        const marker = new google.maps.Marker({
+            position,
+            map: this.map,
+            icon: 'https://lh3.googleusercontent.com/mmpTRdFgoMi4yb8ecfAlSRFnzVNwruaExDGwMI4gpgl3bxOR12_nIk9NNiIgDIKa2fIh2jJCsuyJHrVzviXupVYJJpDXzF4pj_Ay3eobbhIYJVj2q0L_j7_JitTjkHrXRNftoqmLuw=s32-p-k',
+        })
+
+        //all markers will have an id of one bec only one marker can exist at a time
+        this.markers[1] = marker;
+    }
+
+    //remove the single marker associated with property form
+    removeFormMarker() {
+        //if there is a marker, there may not be if its the first time the user is clicking on the map;
+        if (this.markers[1]) {
+            this.markers[1].setMap(null) //removing it from google maps
+            delete this.markers[1] //removing it from the this.markers object
+        }
+    }
+
 
     createMarkerFromProperty(property){
         const position = new google.maps.LatLng(property.latitude, property.longitude); //make a new instance of google maps longitude and latitude class
@@ -76,7 +98,6 @@ export default class MarkerManager {
 
     }
 
-    
     //update specific marker 
     changeMarkerColorFromPropertyId(propertyId) {
         //access the right marker

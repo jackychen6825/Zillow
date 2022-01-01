@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { receiveLatLng } from '../../actions/property_form_actions';
+import MarkerManager from '../../util/marker_manager';
 
 const mdtp = dispatch => ({
     receiveLatLng: latLngObj => dispatch(receiveLatLng(latLngObj))
@@ -20,10 +21,14 @@ class FormMiniMap extends Component {
             disableDefaultUI: true
         }
         this.map = new google.maps.Map(this.mapNode, mapOptions);
+        this.MarkerManager = new MarkerManager(this.map)
         this.map.addListener("click", (mapsMouseEvent) => {
-            
             receiveLatLng(mapsMouseEvent.latLng.toJSON()) //put it on the state for the property form
-            // console.log(mapsMouseEvent.latLng.toJSON()) //console log it for me real quick
+            
+            //delete the previous marker
+            this.MarkerManager.removeFormMarker();
+            //create new marker based on where the user clicked
+            this.MarkerManager.createMarkerFromLatLngObj(mapsMouseEvent.latLng.toJSON())
         })
     }
     

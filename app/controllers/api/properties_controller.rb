@@ -8,6 +8,12 @@ class Api::PropertiesController < ApplicationController
         #there will always be a params[:minPrice] and params[:maxPrice] since those two keys will always be in the filter slice of state
         if params[:minPrice] != "" && params[:maxPrice] != ""
             properties = properties.where(price: price_range)
+        #if the minimum price was not selected but the max price was do something ie return only properties less than the max price 
+        elsif params[:minPrice] == "" && params[:maxPrice] != ""
+            properties = properties.where("price < ?", params[:maxPrice])
+        #if the max price if empty but the min price is selected then return properties above the min price 
+        elsif params[:minPrice] != "" && params[:maxPrice] == ""
+            properties = properties.where("price > ?", params[:minPrice])
         end 
 
         if params[:minBeds] #if there is a minBeds key in our params apply the filters 

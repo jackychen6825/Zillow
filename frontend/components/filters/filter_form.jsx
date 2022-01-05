@@ -102,17 +102,15 @@ export default class FilterForm extends Component {
                 </div>
                 <div className='price-filter-container'>
                     <button className='filter-btn' onClick={this.toggleDropdown('priceOpen')}>Price</button>
-                    <div className={this.state.priceOpen ? "show-filter-price" : "hide-filter"}>
+                    <div onMouseLeave={this.toggleDropdown('priceOpen')} className={this.state.priceOpen ? "show-filter-price" : "hide-filter"}>
                         <div className="price-filter-inputs-container">
                             <input
-                                onChange={this.handleChange('minPrice', updateFilter)}
                                 className='filter-input-price'
                                 type="number"
                                 placeholder='Min'
                                 value={minPrice} />
                             <div className="price-filter-sep"> - </div>
                             <input
-                                onChange={this.handleChange('maxPrice', updateFilter)}
                                 className='filter-input-price'
                                 type="number"
                                 placeholder='Max'
@@ -138,7 +136,7 @@ export default class FilterForm extends Component {
                 </div>
 
                 <button onClick={this.toggleDropdown('bedsOpen')} className='filter-btn'>{this.state.minBeds === "" ? 'Beds' : `${this.state.minBeds}+ beds`}</button>
-                <div className={this.state.bedsOpen ? 'show-filter-beds' : 'hide-filter'}>
+                <div onMouseLeave={this.toggleDropdown('bedsOpen')} className={this.state.bedsOpen ? 'show-filter-beds' : 'hide-filter'}>
                     <div className='filter-label'>Bedrooms</div>
                     <div className='filter-btn-container'>
                         <button className='bed-filter-btn' value='1' onClick={this.handleChange('minBeds', updateFilter)}>1+</button>
@@ -152,7 +150,7 @@ export default class FilterForm extends Component {
 
 
                 <button onClick={this.toggleDropdown('bathsOpen')} className='filter-btn'>{this.state.minBaths === "" ? 'Baths' : `${this.state.minBaths}+ baths`}</button>
-                <div className={this.state.bathsOpen ? 'show-filter-baths' : 'hide-filter'}>
+                <div onMouseLeave={this.toggleDropdown('bathsOpen')} className={this.state.bathsOpen ? 'show-filter-baths' : 'hide-filter'}>
                     <div className='filter-label'>Bathrooms</div>
                     <div className='filter-btn-container'>
                         <button className='bed-filter-btn' value='1' onClick={this.handleChange('minBaths', updateFilter)}>1+</button>

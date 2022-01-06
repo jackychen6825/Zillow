@@ -6,8 +6,9 @@ export default class Saved extends Component {
         super(props)
     }
 
+    //when the component mounts fetch the properties with the saved_ids filter
     componentDidMount() {
-        this.props.fetchProperties({ saved_ids: this.props.saves, saved_page: true })
+        this.props.fetchProperties({ saved_ids: this.props.saves, saved_page: true, minPrice: '', maxPrice: '' })
     }
 
     render() {

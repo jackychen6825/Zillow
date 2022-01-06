@@ -3,16 +3,15 @@ class Api::PropertiesController < ApplicationController
     def index
         properties = bounds ? Property.in_bounds(bounds) : Property.all
 
-        #if both minPrice and maxPrice do not equal an empty string, create a range from them 
-        #use the range to fetch only properties with prices within that range
-        #there will always be a params[:minPrice] and params[:maxPrice] since those two keys will always be in the filter slice of state
         if params[:minPrice] != "" && params[:maxPrice] != ""
             properties = properties.where(price: price_range)
-        #if the minimum price was not selected but the max price was do something ie return only properties less than the max price 
-        elsif params[:minPrice] == "" && params[:maxPrice] != ""
+        end  
+
+        if params[:minPrice] == "" && params[:maxPrice] != ""
             properties = properties.where("price < ?", params[:maxPrice])
-        #if the max price if empty but the min price is selected then return properties above the min price 
-        elsif params[:minPrice] != "" && params[:maxPrice] == ""
+        end 
+
+        if params[:minPrice] != "" && params[:maxPrice] == ""
             properties = properties.where("price > ?", params[:minPrice])
         end 
 
@@ -23,7 +22,7 @@ class Api::PropertiesController < ApplicationController
         if params[:minBaths] #if there is a minBeds key in our params apply the filters 
             properties = properties.where("bathrooms > ?", Integer(params[:minBaths]) - 1)
         end 
-
+        
         if params[:saved_ids]  
             properties = properties.where(id: params[:saved_ids]) 
         end 

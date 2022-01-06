@@ -105,12 +105,14 @@ export default class FilterForm extends Component {
                     <div onMouseLeave={this.toggleDropdown('priceOpen')} className={this.state.priceOpen ? "show-filter-price" : "hide-filter"}>
                         <div className="price-filter-inputs-container">
                             <input
+                                readOnly={true}
                                 className='filter-input-price'
                                 type="number"
                                 placeholder='Min'
                                 value={minPrice} />
                             <div className="price-filter-sep"> - </div>
                             <input
+                                readOnly={true}
                                 className='filter-input-price'
                                 type="number"
                                 placeholder='Max'

@@ -7,6 +7,7 @@ import PropertyFormContainer from '../components/properties/property_form_contai
 import SavedContainer from './properties/saved_container';
 import SplashContainer from './splash/splash_container';
 import RentalSearchContainer from './rental-search/rental-search-container';
+import EditContainer from './properties/edit_container';
 
 const App = () => (
     <div>
@@ -20,6 +21,7 @@ const App = () => (
             <Route exact path='/buy' component={SearchContainer} />
             <Route exact path='/rental' component={RentalSearchContainer} />
             <Route exact path='/saved' component={SavedContainer} />
+            <Route exact path='/edit' component={EditContainer} />
             <Route exact path='/properties/new' component={PropertyFormContainer} />
         </Switch>
             

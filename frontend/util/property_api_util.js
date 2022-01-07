@@ -24,6 +24,17 @@ export const createProperty = formData => (
     })
 )
 
+//same thing as creation with different route 
+export const updateProperty = (id, formData) => (
+    $.ajax({
+        method: "PATCH",
+        url: `/api/properties/${id}`,
+        data: formData,
+        contentType: false,
+        processData: false
+    })
+)
+
 
 
 

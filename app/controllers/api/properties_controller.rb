@@ -35,6 +35,12 @@ class Api::PropertiesController < ApplicationController
             properties = properties.where(listing_type: "rental")
         end 
 
+        #if there is an owner id parameter, only grab the properties that have that owner id 
+        #will be applicable for edit page rendering 
+        if params[:owner_id]
+            properties = properties.where(owner_id: params[:owner_id])
+        end 
+
         @properties = properties
         render :index 
     end
@@ -54,6 +60,16 @@ class Api::PropertiesController < ApplicationController
             render json: @property.errors.full_messages, status: 422 
         end 
     end
+
+    def update
+        @property = Property.find(params[:id]) #find the property with the url id 
+        if @property.owner_id = current_user.id 
+            @property.update(property_params)
+            render :show #return all the attributes of the property to be displayed to the user 
+        else 
+            render json: ['Could not update that property'], status: 422
+        end
+    end 
 
     private
 

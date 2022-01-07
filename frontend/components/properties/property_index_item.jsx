@@ -1,11 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router'
 
 class PropertyIndexItem extends React.Component {
     constructor(props){
         super(props)
-        this.handleSave = this.handleSave.bind(this),
+        this.handleSave = this.handleSave.bind(this)
         this.handleRemoveSave = this.handleRemoveSave.bind(this)
         this.renderSaves = this.renderSaves.bind(this)
+        this.redirectToEdit = this.redirectToEdit.bind(this)
     }
 
     handleSave() {
@@ -28,21 +30,32 @@ class PropertyIndexItem extends React.Component {
         }
     }
 
+    redirectToEdit() {
+        debugger
+        const { receiveEditFormProperty, property } = this.props;
+        receiveEditFormProperty(property)
+        this.props.history.push("/properties/new")
+    }
+
+    componentDidMount() {
+        console.log(this.props)
+    }
+
     render(){
-        const { property, openModal, saved, receiveCurrentProperty, resetCurrentProperty } = this.props;
+        const { property, openModal, saved, edit, receiveCurrentProperty, resetCurrentProperty, receiveEditFormProperty } = this.props;
         
         return (
             <div className={saved ? 'property-item-saved' : 'property-item'}>
-                <img onMouseEnter={() => receiveCurrentProperty(property)} onMouseLeave={resetCurrentProperty} onClick={() => openModal('show', property)} className='example-image' src={property.photoURLs[0]} alt="" />
+                <img onMouseEnter={saved ? () => console.log('') : () => receiveCurrentProperty(property)} onMouseLeave={saved ? () => console.log('') : resetCurrentProperty} onClick={edit ? this.redirectToEdit : () => openModal('show', property)} className='example-image' src={property.photoURLs[0]} alt="" />
                 <div className='property-text-box'> 
                     <p className='price'>${property.price.toLocaleString('en')}</p>
                     <p className='details'>{property.bedrooms} bds {property.bathrooms} ba {property.sqft} sqft</p>
                     <p className='address'>{property.address}</p>
-                    {this.renderSaves()}
+                    {edit ? "" : this.renderSaves()}
                 </div>
             </div>
         )
     }
 } 
 
-export default PropertyIndexItem;
+export default withRouter(PropertyIndexItem);

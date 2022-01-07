@@ -28,4 +28,9 @@ export const createProperty = property => dispatch => (
         .then(property => dispatch(receiveProperty(property)))
 );
 
+export const updateProperty = (id, property) => dispatch => (
+    APIUtil.updateProperty(id, property)
+        .then(property => dispatch(receiveProperty(property)))
+);
+
 

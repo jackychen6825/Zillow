@@ -32,7 +32,7 @@ class UserSession extends Component {
                 <div onMouseLeave={this.toggleDropdown} className={this.state.dropdownOpen ? `user-dropdown-container`: 'hide'}>
                     <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/saved">Saved homes</Link></div>
                     <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/saved">Saved search</Link></div>
-                    <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/properties/new">Your home</Link></div>
+                    <div onClick={this.toggleDropdown} className="dropdown-items"><Link to="/edit">Your home</Link></div>
                     <div onClick={logout} className="dropdown-items-signout"><Link to="/">Sign out</Link></div>
                 </div>
             </div>

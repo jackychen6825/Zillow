@@ -24,6 +24,7 @@ class PropertyForm extends React.Component {
         this.navigatetoSearch = this.navigatetoSearch.bind(this); 
         this.handleSale = this.handleSale.bind(this);
         this.handleRent = this.handleRent.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     //when the user presses a spot on the map:
@@ -108,13 +109,63 @@ class PropertyForm extends React.Component {
         })
     }
  
+    componentDidMount() {
+        const { property } = this.props;
+        if (property) {
+            this.setState({
+                address: property.address,
+                latitude: property.latitude,
+                longitude: property.longitude,
+                city: property.city,
+                state: property.state,
+                zipcode: property.zipcode,
+                bedrooms: property.bedrooms,
+                bathrooms: property.bathrooms,
+                sqft: property.sqft,
+                price: property.price,
+                listing_type: property.listing_type,
+                description: property.description,
+                photos: property.photoURLs
+            })
+        }
+    }
+
+    handleUpdate(e) {
+        e.preventDefault();
+
+        //making use of form data and implementing photos for the backend 
+        const formData = new FormData();
+        formData.append('property[address]', this.state.address);
+        formData.append('property[latitude]', this.state.latitude);
+        formData.append('property[longitude]', this.state.longitude);
+        formData.append('property[city]', this.state.city);
+        formData.append('property[state]', this.state.state);
+        formData.append('property[zipcode]', this.state.zipcode);
+        formData.append('property[bedrooms]', this.state.bedrooms);
+        formData.append('property[bathrooms]', this.state.bathrooms);
+        formData.append('property[sqft]', this.state.sqft);
+        formData.append('property[price]', this.state.price);
+        formData.append('property[listing_type]', this.state.listing_type);
+        formData.append('property[description]', this.state.description);
+        
+        //taking care of photos:
+        for (let i = 0; i < this.state.photos.length; i++) {
+            formData.append("property[photos][]", this.state.photos[i]);
+        }
+
+        //hitting the backend here with the property id and the edited form data 
+        this.props.updateProperty(this.props.property.id, formData);
+        //return to the homepage upon completion 
+        this.navigatetoSearch();
+    }
 
     render(){
+        const {property} = this.props;
         return (
             <div className='property-form-container'>
                 <div className="map-desc">Press anywhere on the map to autofill latitude and longitude</div>
                 <img className="property-form-background" src="https://images.unsplash.com/photo-1502921451607-29fa99d270d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" />
-                <form onSubmit={this.handleSubmit} className='property-form'>
+                <form onSubmit={property ? this.handleUpdate : this.handleSubmit} className='property-form'>
                     <div className='photos-input'>
                         <div className='files-input-container'>
                             <label className='photo-label' htmlFor='files'>
@@ -274,7 +325,7 @@ class PropertyForm extends React.Component {
                             />
                         </div>
                     </div>
-                    <input className='create-submit' type="submit" value='Post Home' />
+                    <input className='create-submit' type="submit" value={property ? 'Update Home' : 'Post Home'} />
                 </form>
                 <FormMiniMap />
             </div>

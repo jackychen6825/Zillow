@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: {format: :json} do
-    resources :properties, only: [:create, :index, :show, :update, :edit] 
+    resources :properties, only: [:create, :index, :show, :update] 
   end
 
   namespace :api, defaults: {format: :json} do 

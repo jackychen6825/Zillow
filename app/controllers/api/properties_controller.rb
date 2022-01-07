@@ -63,6 +63,7 @@ class Api::PropertiesController < ApplicationController
 
     def update
         @property = Property.find(params[:id]) #find the property with the url id 
+        debugger
         if @property.owner_id = current_user.id 
             @property.update(property_params)
             render :show #return all the attributes of the property to be displayed to the user 

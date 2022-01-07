@@ -159,6 +159,10 @@ class PropertyForm extends React.Component {
         this.navigatetoSearch();
     }
 
+    componentWillUnmount() {
+        this.props.resetEditForm();
+    }
+
     render(){
         const {property} = this.props;
         return (

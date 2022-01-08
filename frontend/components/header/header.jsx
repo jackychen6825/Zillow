@@ -19,7 +19,7 @@ const Header = ({ currentUser, logout, openModal }) => {
             <div className="header-right">
                 <a href="https://www.linkedin.com/in/jacky-chen6825/">LinkedIn</a>
                 <a href="https://github.com/jackychen6825">GitHub</a>
-                <a href="https://angel.co/profile/edit/overview">AngeList</a>
+                <a href="https://angel.co/u/jacky-chen-33">AngeList</a>
                 <UserSessionContainer />
             </div>
         </div>
@@ -40,7 +40,7 @@ const Header = ({ currentUser, logout, openModal }) => {
             <div className="header-right">
                 <a href="https://www.linkedin.com/in/jacky-chen6825/">LinkedIn</a>
                 <a href="https://github.com/jackychen6825">GitHub</a>
-                <a href="https://angel.co/profile/edit/overview">AngeList</a>
+                <a href="https://angel.co/u/jacky-chen-33">AngeList</a>
                 <UserSessionContainer />
             </div>
         </div>

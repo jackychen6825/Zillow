@@ -17,9 +17,9 @@ const Header = ({ currentUser, logout, openModal }) => {
             <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Mi8qBC9eaJspl7S-MWKFT3f9llTQxcC9NP_B8ZK9UBwOTq8EtrqE7nI5_-AkkTJagOM2drVYZ_XBjkmxAr0DiuClKPFV6jFffaDtLfkiQMEUDhLZY8aJyf0H7uM1JBtkOVxS26-5Jg=w2400" className="logo" /> </Link>
 
             <div className="header-right">
-                <Link to="/">AngeList</Link>
-                <Link to="/">LinkedIn</Link>
-                <Link to="/">GitHub</Link>
+                <a href="https://www.linkedin.com/in/jacky-chen6825/">LinkedIn</a>
+                <a href="https://github.com/jackychen6825">GitHub</a>
+                <a href="https://angel.co/profile/edit/overview">AngeList</a>
                 <UserSessionContainer />
             </div>
         </div>
@@ -38,9 +38,9 @@ const Header = ({ currentUser, logout, openModal }) => {
             <Link to="/" className="logoContainer"> <img src="https://lh3.googleusercontent.com/Mi8qBC9eaJspl7S-MWKFT3f9llTQxcC9NP_B8ZK9UBwOTq8EtrqE7nI5_-AkkTJagOM2drVYZ_XBjkmxAr0DiuClKPFV6jFffaDtLfkiQMEUDhLZY8aJyf0H7uM1JBtkOVxS26-5Jg=w2400" className="logo" /> </Link>
 
             <div className="header-right">
-                <Link to="/">AngeList</Link>
-                <Link to="/">LinkedIn</Link>
-                <Link to="/">GitHub</Link>
+                <a href="https://www.linkedin.com/in/jacky-chen6825/">LinkedIn</a>
+                <a href="https://github.com/jackychen6825">GitHub</a>
+                <a href="https://angel.co/profile/edit/overview">AngeList</a>
                 <UserSessionContainer />
             </div>
         </div>

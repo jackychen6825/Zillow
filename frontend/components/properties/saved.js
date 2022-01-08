@@ -8,7 +8,14 @@ export default class Saved extends Component {
 
     //when the component mounts fetch the properties with the saved_ids filter
     componentDidMount() {
-        this.props.fetchProperties({ saved_ids: this.props.saves, saved_page: true, minPrice: '', maxPrice: '' })
+        const {saves} = this.props;
+        
+        if (saves.length !== 0) {
+            this.props.fetchProperties({ saved_ids: this.props.saves, minPrice: '', maxPrice: '' })
+        } else {
+            //user likes no properties 
+            this.props.fetchProperties({ saved_ids: [], has_saves: false, minPrice: '', maxPrice: '' })
+        }
     }
 
     render() {

@@ -23,8 +23,14 @@ class Api::PropertiesController < ApplicationController
             properties = properties.where("bathrooms > ?", Integer(params[:minBaths]) - 1)
         end 
         
-        if params[:saved_ids]  
+        if params[:saved_ids]
             properties = properties.where(id: params[:saved_ids]) 
+        end 
+
+        #if the user has no saves, will pass down has_saves:false 
+        #hit this conditional, and return nothing for the saved component
+        if !!params[:has_saves]
+            properties = []
         end 
 
         if params[:searchType] === 'buy'
@@ -35,8 +41,6 @@ class Api::PropertiesController < ApplicationController
             properties = properties.where(listing_type: "rental")
         end 
 
-        #if there is an owner id parameter, only grab the properties that have that owner id 
-        #will be applicable for edit page rendering 
         if params[:owner_id]
             properties = properties.where(owner_id: params[:owner_id])
         end 

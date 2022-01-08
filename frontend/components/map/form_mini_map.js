@@ -16,7 +16,7 @@ class FormMiniMap extends Component {
         const { receiveLatLng } = this.props;
 
         const mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 }, 
+            center: { lat: 40.7128, lng: -73.935242 }, 
             zoom: 11,
             disableDefaultUI: true
         }

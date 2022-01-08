@@ -31,14 +31,9 @@ class PropertyIndexItem extends React.Component {
     }
 
     redirectToEdit() {
-        debugger
         const { receiveEditFormProperty, property } = this.props;
         receiveEditFormProperty(property)
         this.props.history.push("/properties/new")
-    }
-
-    componentDidMount() {
-        console.log(this.props)
     }
 
     render(){

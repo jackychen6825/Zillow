@@ -59,7 +59,11 @@ export default class Splash extends Component {
         return (
             <div className="splash-container">
                 <div className="splash-image-container">
-                    <img className="splash-image" src="https://wallpapercave.com/wp/wp2464232.jpg" alt="" />
+                    <img 
+                        className="splash-image" 
+                        src="https://lh3.googleusercontent.com/D8dlomz1zsC0rhUes8u_OUz7oRg_wOEqYffvTD0kbS4pia8_IXjz96u27GpgrjT4S4Fd2iihQJfhf5bgdfFW3xj5TkiZT_fanVvlrp3nO4GfDR_qk0svdqwkvxtBUiFRxbWYa3PhTA=w2400" 
+                        alt="" 
+                    />
                 </div>
                 <div className="splash-text-container">
                     <p className="splash-text">Change starts here</p>

@@ -98,10 +98,13 @@
     border: 1px solid lightgrey;
     border-radius: 3px;
     margin: 3px;
+    cursor: pointer;
 }
 
 .bed-filter-btn:hover {
     border: 2px solid dodgerblue;
+    background-color: dodgerblue;
+    color: white;
 }
 
 .filter-label {

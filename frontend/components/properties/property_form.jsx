@@ -125,7 +125,7 @@ class PropertyForm extends React.Component {
                 price: property.price,
                 listing_type: property.listing_type,
                 description: property.description,
-                photos: property.photoURLs
+                photos: property.photos
             })
         }
     }

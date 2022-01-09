@@ -7,7 +7,8 @@ import { makeSave, removeSave } from '../../actions/save_actions';
 const mSTP = ({ entities, session }) => ({
     currentUser: entities.users[session.id],
     saves: entities.users[session.id].saves, 
-    properties: Object.values(entities.properties)
+    properties: Object.values(entities.properties),
+   
 });
 
 const mDTP = dispatch => ({

@@ -4,17 +4,30 @@ import PropertyIndexItem from './property_index_item'
 export default class Saved extends Component {
     constructor(props) {
         super(props)
+        this.state = { rerender: false }
     }
 
-    //when the component mounts fetch the properties with the saved_ids filter
     componentDidMount() {
         const {saves} = this.props;
         
         if (saves.length !== 0) {
             this.props.fetchProperties({ saved_ids: this.props.saves, minPrice: '', maxPrice: '' })
         } else {
-            //user likes no properties 
             this.props.fetchProperties({ saved_ids: [], has_saves: false, minPrice: '', maxPrice: '' })
+        }
+    }
+
+    //when the react component gets new props ie when the user unlikes a property 
+    //grab the properties again based on the new users saves array 
+    //since props changed, this will cause a rerender 
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
+           const {saves} = this.props;
+            if (saves.length !== 0) {
+                this.props.fetchProperties({ saved_ids: this.props.saves, minPrice: '', maxPrice: '' })
+            } else {
+                this.props.fetchProperties({ saved_ids: [], has_saves: false, minPrice: '', maxPrice: '' })
+            }
         }
     }
 

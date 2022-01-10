@@ -42,7 +42,7 @@ export default class Saved extends Component {
                                         removeSave={removeSave}
                                         openModal={openModal}
                                     />
-                    ) }
+                    )}
                 </div>
             </div>
         )

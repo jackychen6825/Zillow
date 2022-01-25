@@ -11,8 +11,9 @@ export default function filterReducer(state = defaultState, action) {
             nextState[action.filter] = action.value
             return nextState;  
         case CLEAR_FILTERS:
-            return Object.assign({}, defaultState, { searchType: action.remainingFilter })
-            // return defaultState;
+            //keep the current boundaries 
+            let bounds = state.bounds;
+            return Object.assign({}, defaultState, { searchType: action.remainingFilter }, { bounds })
         default:
             return state;
     }

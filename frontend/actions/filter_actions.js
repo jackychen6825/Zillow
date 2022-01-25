@@ -20,7 +20,6 @@ export const updateFilter = (filter, value) => (dispatch, getState) => {
 };
 
 export const removeFilters = (remainingFilter) => (dispatch, getState) => {
-    debugger
     dispatch(clearFilters(remainingFilter));
     return fetchProperties(getState().ui.filters)(dispatch);
 }

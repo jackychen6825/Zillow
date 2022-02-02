@@ -28,6 +28,8 @@ class PropertyShow extends React.Component {
             return <div className='save-container-show' onClick={this.handleSave}><i className="far fa-heart fa-2x show"></i></div>
         }
     }
+
+    
     
     render(){
         const { property } = this.props;

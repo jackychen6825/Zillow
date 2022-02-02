@@ -343,3 +343,17 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+// error styling 
+.error-container {
+  position: relative;
+  margin-bottom: 30px;
+};
+
+.error-item {
+  font-family: 'Outfit', serif;
+  list-style: none;
+  color: cornflowerblue;
+  position: absolute;
+  left: 10px;
+}

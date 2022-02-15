@@ -12,6 +12,16 @@
     <%= stylesheet_link_tag 'application', media: 'all' %> <%= csrf_meta_tags %>
     
     <%= javascript_include_tag 'application' %>
+
+    <meta property="og:title" content="Millow" />
+    <meta property='og:image' content="<%= image_url('project_pic.jpg') %>"/>
+    <meta property="og:description"
+      content="A pixel-perfect clone of Zillow inspired by the time I spent perusing properties in college."
+    />
+    <meta property="og:url"
+      content="https://willow-trees.herokuapp.com/#/"
+    />
+
   </head>
 
   <body>

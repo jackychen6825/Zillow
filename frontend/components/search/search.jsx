@@ -4,7 +4,9 @@ import PropertyIndexContainer from "../properties/properties_index_container";
 import FilterForm from "../filters/filter_form";
 import React, { Component } from 'react'
 
-export default class Search extends Component {
+
+//the search component is essential the main page 
+export default class Search extends Component { //we are using a react class component here so class component name extends React.Componet
     constructor(props) {
         super(props)
     }
@@ -14,6 +16,9 @@ export default class Search extends Component {
         this.props.changeFilter('searchType', 'buy')
     }
 
+    //components within components 
+
+    //lifting is when two child compoennts share the same props ie the ones being passed down from this parent component;
     render() {
         const { properties, updateFilter, removeFilters, minPrice, maxPrice, minBeds, minBaths, openModal } = this.props;
         return (
